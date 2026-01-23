@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard - Prestige PR & Communications</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .dashboard-container {
+            background-color: var(--obsidian-black);
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            background-color: rgba(245, 245, 240, 0.05);
+            border-right: 1px solid rgba(198, 162, 74, 0.2);
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar-nav a {
+            color: var(--ivory-white);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background-color: rgba(198, 162, 74, 0.1);
+            border-left-color: var(--royal-gold);
+            color: var(--royal-gold);
+        }
+        
+        .sidebar-nav i {
+            margin-right: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        .main-content {
+            padding: 2rem;
+        }
+        
+        .dashboard-card {
+            background-color: rgba(245, 245, 240, 0.05);
+            border: 1px solid rgba(198, 162, 74, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .dashboard-card:hover {
+            border-color: var(--royal-gold);
+            box-shadow: 0 10px 25px rgba(198, 162, 74, 0.2);
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(198, 162, 74, 0.1), rgba(198, 162, 74, 0.2));
+            border: 1px solid var(--royal-gold);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(198, 162, 74, 0.3);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--royal-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .campaign-item {
+            background-color: rgba(245, 245, 240, 0.05);
+            border: 1px solid rgba(198, 162, 74, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .campaign-item:hover {
+            border-color: var(--royal-gold);
+            background-color: rgba(198, 162, 74, 0.05);
+        }
+        
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .status-active {
+            background-color: rgba(40, 167, 69, 0.2);
+            color: #28a745;
+            border: 1px solid #28a745;
+        }
+        
+        .status-pending {
+            background-color: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            border: 1px solid #ffc107;
+        }
+        
+        .status-completed {
+            background-color: rgba(198, 162, 74, 0.2);
+            color: var(--royal-gold);
+            border: 1px solid var(--royal-gold);
+        }
+        
+        .media-item {
+            background-color: rgba(245, 245, 240, 0.05);
+            border: 1px solid rgba(198, 162, 74, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .media-item:hover {
+            border-color: var(--royal-gold);
+            transform: translateX(5px);
+        }
+        
+        .notification-item {
+            background-color: rgba(198, 162, 74, 0.1);
+            border-left: 3px solid var(--royal-gold);
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-top: 1rem;
+        }
+        
+        .top-bar {
+            background-color: rgba(245, 245, 240, 0.05);
+            border-bottom: 1px solid rgba(198, 162, 74, 0.2);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--royal-gold);
+            color: var(--obsidian-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .content-section {
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .approval-item {
+            background-color: rgba(245, 245, 240, 0.05);
+            border: 1px solid rgba(198, 162, 74, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .approval-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .message-item {
+            background-color: rgba(245, 245, 240, 0.05);
+            border: 1px solid rgba(198, 162, 74, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .message-item.unread {
+            border-color: var(--royal-gold);
+            background-color: rgba(198, 162, 74, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="d-flex align-items-center">
+                <div class="dropdown me-4">
+                    <button class="btn btn-outline-gold dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-house"></i> Home
+                    </button>
+                    <ul class="dropdown-menu bg-black border-gold" aria-labelledby="homeDropdown">
+                        <li><a class="dropdown-item text-ivory" href="index.html">Brand Power Mode</a></li>
+                        <li><a class="dropdown-item text-ivory" href="home2.html">Media & Press Mode</a></li>
+                    </ul>
+                </div>
+                <h4 class="mb-0 text-gold">Brand Command Center</h4>
+            </div>
+            <div class="text-center">
+                <p class="opacity-75 mb-0">&copy; 2026 Prestige PR & Communications. All rights reserved.</p>
+            </div>
+            <div class="user-menu">
+                <div class="dropdown">
+                    <button class="btn btn-outline-gold dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-bell"></i>
+                        <span class="badge bg-gold text-black">3</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end bg-black border-gold">
+                        <li><h6 class="dropdown-header text-gold">Notifications</h6></li>
+                        <li><a class="dropdown-item text-ivory" href="#">New press coverage secured</a></li>
+                        <li><a class="dropdown-item text-ivory" href="#">Campaign milestone reached</a></li>
+                        <li><a class="dropdown-item text-ivory" href="#">Monthly report ready</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-outline-gold dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown">
+                        <div class="user-avatar me-2">JD</div>
+                        John Doe
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end bg-black border-gold">
+                        <li><a class="dropdown-item text-ivory" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
+                        <li><a class="dropdown-item text-ivory" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
+                        <li><hr class="dropdown-divider border-gold"></li>
+                        <li><a class="dropdown-item text-ivory" href="index.html"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex">
+            <!-- Sidebar -->
+            <div class="sidebar col-md-3 col-lg-2">
+                <ul class="sidebar-nav">
+                    <li>
+                        <a href="#" class="active" onclick="showSection('overview')">
+                            <i class="bi bi-speedometer2"></i>
+                            Overview
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showSection('campaigns')">
+                            <i class="bi bi-megaphone"></i>
+                            Campaigns
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showSection('media')">
+                            <i class="bi bi-newspaper"></i>
+                            Media Coverage
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showSection('reports')">
+                            <i class="bi bi-graph-up"></i>
+                            Reports
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showSection('approvals')">
+                            <i class="bi bi-check-circle"></i>
+                            Approvals
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showSection('messages')">
+                            <i class="bi bi-chat-dots"></i>
+                            Messages
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content col-md-9 col-lg-10">
+                
+                <!-- Overview Section -->
+                <div id="overview" class="content-section active">
+                    <h2 class="mb-4">Dashboard Overview</h2>
+                    
+                    <!-- Stats Cards -->
+                    <div class="row mb-4">
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="stat-card">
+                                <div class="stat-number">12</div>
+                                <div class="text-ivory">Active Campaigns</div>
+                                <small class="text-gold">+3 this month</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="stat-card">
+                                <div class="stat-number">247</div>
+                                <div class="text-ivory">Media Mentions</div>
+                                <small class="text-gold">+18% vs last month</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="stat-card">
+                                <div class="stat-number">5.2M</div>
+                                <div class="text-ivory">Reach</div>
+                                <small class="text-gold">+25% growth</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-3">
+                            <div class="stat-card">
+                                <div class="stat-number">98%</div>
+                                <div class="text-ivory">Sentiment</div>
+                                <small class="text-gold">Positive</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="row mb-4">
+                        <div class="col-lg-8">
+                            <div class="dashboard-card">
+                                <h5 class="text-gold mb-3">Media Coverage Trend</h5>
+                                <div class="chart-container">
+                                    <canvas id="coverageChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="dashboard-card">
+                                <h5 class="text-gold mb-3">Campaign Status</h5>
+                                <div class="chart-container">
+                                    <canvas id="statusChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="dashboard-card">
+                        <h5 class="text-gold mb-3">Recent Activity</h5>
+                        <div class="notification-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6 class="mb-1">TechCrunch Coverage Secured</h6>
+                                    <p class="mb-0 opacity-75">Your AI startup campaign received major coverage in TechCrunch</p>
+                                </div>
+                                <small class="text-gold">2 hours ago</small>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6 class="mb-1">Campaign Milestone Reached</h6>
+                                    <p class="mb-0 opacity-75">Q4 campaign achieved 150% of target media placements</p>
+                                </div>
+                                <small class="text-gold">5 hours ago</small>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6 class="mb-1">Monthly Report Ready</h6>
+                                    <p class="mb-0 opacity-75">November performance report is now available for download</p>
+                                </div>
+                                <small class="text-gold">1 day ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campaigns Section -->
+                <div id="campaigns" class="content-section">
+                    <h2 class="mb-4">Campaign Management</h2>
+                    
+                    <div class="dashboard-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="text-gold">Active Campaigns</h5>
+                            <button class="btn btn-gold btn-sm">New Campaign</button>
+                        </div>
+                        
+                        <div class="campaign-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6>AI Product Launch</h6>
+                                    <p class="mb-1 opacity-75">Launch campaign for new AI-powered analytics platform</p>
+                                    <small class="text-gold">Started: Nov 1, 2024</small>
+                                </div>
+                                <div class="text-end">
+                                    <span class="status-badge status-active">Active</span>
+                                    <div class="mt-2">
+                                        <small>75% Complete</small>
+                                        <div class="progress" style="height: 5px;">
+                                            <div class="progress-bar bg-gold" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="campaign-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6>Crisis Management Response</h6>
+                                    <p class="mb-1 opacity-75">Reputation recovery campaign for healthcare client</p>
+                                    <small class="text-gold">Started: Nov 15, 2024</small>
+                                </div>
+                                <div class="text-end">
+                                    <span class="status-badge status-active">Active</span>
+                                    <div class="mt-2">
+                                        <small>40% Complete</small>
+                                        <div class="progress" style="height: 5px;">
+                                            <div class="progress-bar bg-gold" style="width: 40%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="campaign-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6>Brand Repositioning</h6>
+                                    <p class="mb-1 opacity-75">Financial services brand digital transformation</p>
+                                    <small class="text-gold">Started: Oct 15, 2024</small>
+                                </div>
+                                <div class="text-end">
+                                    <span class="status-badge status-completed">Completed</span>
+                                    <div class="mt-2">
+                                        <small>100% Complete</small>
+                                        <div class="progress" style="height: 5px;">
+                                            <div class="progress-bar bg-gold" style="width: 100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Media Coverage Section -->
+                <div id="media" class="content-section">
+                    <h2 class="mb-4">Media Coverage</h2>
+                    
+                    <div class="dashboard-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="text-gold">Latest Mentions</h5>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-outline-gold btn-sm active">All</button>
+                                <button class="btn btn-outline-gold btn-sm">Positive</button>
+                                <button class="btn btn-outline-gold btn-sm">Neutral</button>
+                            </div>
+                        </div>
+                        
+                        <div class="media-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6>TechCrunch</h6>
+                                    <p class="mb-1">"AI Startup Raises $50M Following Prestige PR Campaign"</p>
+                                    <small class="text-gold">Reach: 2.5M • Sentiment: Positive</small>
+                                </div>
+                                <div class="text-end">
+                                    <small class="text-gold">2 hours ago</small>
+                                    <div>
+                                        <a href="#" class="btn btn-outline-gold btn-sm">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="media-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6>Forbes</h6>
+                                    <p class="mb-1">"Healthcare Brand's Transparency Wins Public Trust"</p>
+                                    <small class="text-gold">Reach: 1.8M • Sentiment: Positive</small>
+                                </div>
+                                <div class="text-end">
+                                    <small class="text-gold">5 hours ago</small>
+                                    <div>
+                                        <a href="#" class="btn btn-outline-gold btn-sm">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="media-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6>Bloomberg</h6>
+                                    <p class="mb-1">"Future of Digital PR: Industry Leaders Weigh In"</p>
+                                    <small class="text-gold">Reach: 3.2M • Sentiment: Positive</small>
+                                </div>
+                                <div class="text-end">
+                                    <small class="text-gold">8 hours ago</small>
+                                    <div>
+                                        <a href="#" class="btn btn-outline-gold btn-sm">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reports Section -->
+                <div id="reports" class="content-section">
+                    <h2 class="mb-4">Reports & Analytics</h2>
+                    
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="dashboard-card">
+                                <h5 class="text-gold mb-3">Performance Overview</h5>
+                                <div class="chart-container">
+                                    <canvas id="performanceChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="dashboard-card">
+                                <h5 class="text-gold mb-3">Download Reports</h5>
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item bg-black border-gold text-ivory">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-1">Monthly Report - November</h6>
+                                                <small>Generated 2 days ago</small>
+                                            </div>
+                                            <i class="bi bi-download text-gold"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="list-group-item bg-black border-gold text-ivory">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-1">Q3 2024 Summary</h6>
+                                                <small>Generated 1 month ago</small>
+                                            </div>
+                                            <i class="bi bi-download text-gold"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="list-group-item bg-black border-gold text-ivory">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-1">Campaign Analysis</h6>
+                                                <small>Generated 1 week ago</small>
+                                            </div>
+                                            <i class="bi bi-download text-gold"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Approvals Section -->
+                <div id="approvals" class="content-section">
+                    <h2 class="mb-4">Content Approvals</h2>
+                    
+                    <div class="dashboard-card">
+                        <h5 class="text-gold mb-3">Pending Your Approval</h5>
+                        
+                        <div class="approval-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6>Press Release: AI Product Launch</h6>
+                                    <p class="mb-1 opacity-75">Draft press release for upcoming product announcement</p>
+                                    <small class="text-gold">Submitted by: Sarah Johnson • 2 hours ago</small>
+                                </div>
+                            </div>
+                            <div class="approval-actions">
+                                <button class="btn btn-success btn-sm">Approve</button>
+                                <button class="btn btn-warning btn-sm">Request Changes</button>
+                                <button class="btn btn-outline-gold btn-sm">Preview</button>
+                            </div>
+                        </div>
+                        
+                        <div class="approval-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6>Blog Post: Crisis Management Best Practices</h6>
+                                    <p class="mb-1 opacity-75">Thought leadership article for company blog</p>
+                                    <small class="text-gold">Submitted by: Michael Chen • 5 hours ago</small>
+                                </div>
+                            </div>
+                            <div class="approval-actions">
+                                <button class="btn btn-success btn-sm">Approve</button>
+                                <button class="btn btn-warning btn-sm">Request Changes</button>
+                                <button class="btn btn-outline-gold btn-sm">Preview</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Messages Section -->
+                <div id="messages" class="content-section">
+                    <h2 class="mb-4">Messages</h2>
+                    
+                    <div class="dashboard-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="text-gold">Agency Messages</h5>
+                            <button class="btn btn-gold btn-sm">New Message</button>
+                        </div>
+                        
+                        <div class="message-item unread">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6>Sarah Johnson - Campaign Update</h6>
+                                    <p class="mb-1 opacity-75">Great news! We've secured coverage in TechCrunch for your AI startup...</p>
+                                    <small class="text-gold">2 hours ago</small>
+                                </div>
+                                <span class="badge bg-gold text-black">New</span>
+                            </div>
+                        </div>
+                        
+                        <div class="message-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6>Michael Chen - Monthly Report</h6>
+                                    <p class="mb-1 opacity-75">November performance report is ready for your review...</p>
+                                    <small class="text-gold">1 day ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="message-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6>Emily Rodriguez - Strategy Meeting</h6>
+                                    <p class="mb-1 opacity-75">Let's schedule a call to discuss Q1 2025 strategy...</p>
+                                    <small class="text-gold">2 days ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Show content section
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update sidebar active state
+            document.querySelectorAll('.sidebar-nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+        
+        // Initialize charts
+        function initCharts() {
+            // Coverage Chart
+            const coverageCtx = document.getElementById('coverageChart');
+            if (coverageCtx) {
+                new Chart(coverageCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                        datasets: [{
+                            label: 'Media Mentions',
+                            data: [120, 135, 125, 145, 160, 175, 190, 185, 200, 210, 247, 250],
+                            borderColor: '#C6A24A',
+                            backgroundColor: 'rgba(198, 162, 74, 0.1)',
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                labels: { color: '#F5F5F0' }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                ticks: { color: '#F5F5F0' },
+                                grid: { color: 'rgba(245, 245, 240, 0.1)' }
+                            },
+                            x: {
+                                ticks: { color: '#F5F5F0' },
+                                grid: { color: 'rgba(245, 245, 240, 0.1)' }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Status Chart
+            const statusCtx = document.getElementById('statusChart');
+            if (statusCtx) {
+                new Chart(statusCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Active', 'Completed', 'Pending'],
+                        datasets: [{
+                            data: [12, 8, 3],
+                            backgroundColor: ['#C6A24A', '#28a745', '#ffc107']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                labels: { color: '#F5F5F0' }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Performance Chart
+            const performanceCtx = document.getElementById('performanceChart');
+            if (performanceCtx) {
+                new Chart(performanceCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Reach', 'Engagement', 'Sentiment', 'Conversions', 'ROI'],
+                        datasets: [{
+                            label: 'Current Month',
+                            data: [85, 92, 98, 78, 145],
+                            backgroundColor: '#C6A24A'
+                        }, {
+                            label: 'Previous Month',
+                            data: [70, 85, 95, 65, 120],
+                            backgroundColor: 'rgba(198, 162, 74, 0.5)'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                labels: { color: '#F5F5F0' }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                ticks: { color: '#F5F5F0' },
+                                grid: { color: 'rgba(245, 245, 240, 0.1)' }
+                            },
+                            x: {
+                                ticks: { color: '#F5F5F0' },
+                                grid: { color: 'rgba(245, 245, 240, 0.1)' }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+        
+        // Initialize charts when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initCharts();
+        });
+    </script>
+</body>
+</html>

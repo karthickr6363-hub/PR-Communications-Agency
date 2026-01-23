@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige PR & Communications - Shaping Stories. Building Reputation.</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-briefcase-fill text-gold"></i> Prestige PR
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu bg-black border-gold" aria-labelledby="homeDropdown">
+                            <li><a class="dropdown-item text-ivory" href="index.html">Brand Power Mode</a></li>
+                            <li><a class="dropdown-item text-ivory" href="home2.html">Media & Press Mode</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="industries.html">Industries</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu bg-black border-gold" aria-labelledby="pagesDropdown">
+                            <li><a class="dropdown-item text-ivory" href="case-studies.html">Case Studies</a></li>
+                            <li><a class="dropdown-item text-ivory" href="press-room.html">Press Room</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="careers.html">Careers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="client-login.html">Client Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-gold px-3" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light btn-sm" id="themeToggle" onclick="toggleTheme()">
+                            <i class="bi bi-moon" id="themeIcon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-video">
+            <video autoplay muted loop>
+                <source src="assets/hero-video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-8">
+                    <div class="hero-content animate-fade-in">
+                        <h1 class="display-2 fw-bold mb-4">
+                            Shaping Stories.<br>
+                            Building Reputation.<br>
+                            <span class="text-gold">Driving Influence.</span>
+                        </h1>
+                        <p class="lead mb-5">Premium PR & Communications Agency delivering strategic excellence and measurable results for global brands.</p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-gold btn-lg me-3">Start a Project</a>
+                            <a href="#case-studies" class="btn btn-outline-light btn-lg">View Work</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="py-5 bg-black" id="services">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-12 text-center">
+                    <h2 class="display-4 fw-bold mb-3">What We Do</h2>
+                    <div class="gold-line mx-auto"></div>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-megaphone-fill"></i>
+                        </div>
+                        <h3>Media Relations</h3>
+                        <p>Strategic media outreach and relationship building with top-tier journalists and publications.</p>
+                        <a href="#" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h3>Crisis Management</h3>
+                        <p>24/7 crisis response and reputation protection when your brand needs it most.</p>
+                        <a href="#" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <h3>Brand Strategy</h3>
+                        <p>Comprehensive brand positioning and narrative development for market leadership.</p>
+                        <a href="#" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h3>Influencer Marketing</h3>
+                        <p>Authentic influencer partnerships that drive engagement and brand advocacy.</p>
+                        <a href="#" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <h3>Corporate Communications</h3>
+                        <p>Internal and external communications that align stakeholders with your vision.</p>
+                        <a href="#" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h3>Digital PR</h3>
+                        <p>Online reputation management and digital visibility strategies for the modern era.</p>
+                        <a href="#" class="service-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Impact Stats -->
+    <section class="py-5 bg-ivory" id="stats">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center mb-4">
+                    <div class="stat-item">
+                        <h2 class="display-3 fw-bold text-gold counter" data-target="500">0</h2>
+                        <p class="text-dark fw-semibold">Clients Served</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center mb-4">
+                    <div class="stat-item">
+                        <h2 class="display-3 fw-bold text-gold counter" data-target="1200">0</h2>
+                        <p class="text-dark fw-semibold">Campaigns Launched</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center mb-4">
+                    <div class="stat-item">
+                        <h2 class="display-3 fw-bold text-gold counter" data-target="50">0</h2>
+                        <p class="text-dark fw-semibold">Media Reach (M)</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center mb-4">
+                    <div class="stat-item">
+                        <h2 class="display-3 fw-bold text-gold counter" data-target="98">0</h2>
+                        <p class="text-dark fw-semibold">Success Rate %</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Case Studies -->
+    <section class="py-5 bg-black" id="case-studies">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-12 text-center">
+                    <h2 class="display-4 fw-bold mb-3">Featured Case Studies</h2>
+                    <div class="gold-line mx-auto"></div>
+                </div>
+            </div>
+            
+            <div class="case-studies-slider">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="case-card">
+                            <div class="case-image">
+                                <img src="assets/case1.jpg" alt="Tech Startup Launch">
+                                <div class="case-overlay">
+                                    <button class="btn btn-gold" onclick="openCaseModal('case1')">
+                                        <i class="bi bi-plus-circle"></i> View Story
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="case-content">
+                                <h4>Tech Startup Launch</h4>
+                                <p class="text-gold">Technology</p>
+                                <p>Launched emerging AI startup to national prominence with 200+ media mentions.</p>
+                                <div class="case-metrics">
+                                    <span><i class="bi bi-graph-up"></i> 300% ROI</span>
+                                    <span><i class="bi bi-newspaper"></i> 200+ Mentions</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="case-card">
+                            <div class="case-image">
+                                <img src="assets/case2.jpg" alt="Crisis Management">
+                                <div class="case-overlay">
+                                    <button class="btn btn-gold" onclick="openCaseModal('case2')">
+                                        <i class="bi bi-plus-circle"></i> View Story
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="case-content">
+                                <h4>Crisis Management</h4>
+                                <p class="text-gold">Healthcare</p>
+                                <p>Successfully navigated major healthcare brand through reputation crisis.</p>
+                                <div class="case-metrics">
+                                    <span><i class="bi bi-shield-check"></i> Reputation Restored</span>
+                                    <span><i class="bi bi-clock"></i> 48hr Response</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="case-card">
+                            <div class="case-image">
+                                <img src="assets/case3.jpg" alt="Brand Repositioning">
+                                <div class="case-overlay">
+                                    <button class="btn btn-gold" onclick="openCaseModal('case3')">
+                                        <i class="bi bi-plus-circle"></i> View Story
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="case-content">
+                                <h4>Brand Repositioning</h4>
+                                <p class="text-gold">Finance</p>
+                                <p>Transformed traditional financial services brand into digital leader.</p>
+                                <div class="case-metrics">
+                                    <span><i class="bi bi-trophy"></i> Industry Award</span>
+                                    <span><i class="bi bi-people"></i> 50% Growth</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="py-5 bg-gold text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-4 fw-bold text-black mb-4">Let's Build Your Brand Authority</h2>
+                    <p class="lead text-black mb-4">Ready to elevate your brand's presence and impact? Let's discuss how we can help you achieve your goals.</p>
+                    <a href="contact.html" class="btn btn-black btn-lg">Book Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-ivory py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="text-gold fw-bold mb-3">Prestige PR & Communications</h5>
+                    <p>Shaping stories, building reputation, and driving influence for global brands.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-gold me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-gold me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-gold me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-gold"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 mb-4">
+                    <h6 class="text-gold fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-ivory text-decoration-none">About Us</a></li>
+                        <li><a href="services.html" class="text-ivory text-decoration-none">Services</a></li>
+                        <li><a href="case-studies.html" class="text-ivory text-decoration-none">Case Studies</a></li>
+                        <li><a href="contact.html" class="text-ivory text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-4">
+                    <h6 class="text-gold fw-bold mb-3">Services</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-ivory text-decoration-none">Media Relations</a></li>
+                        <li><a href="#" class="text-ivory text-decoration-none">Crisis Management</a></li>
+                        <li><a href="#" class="text-ivory text-decoration-none">Brand Strategy</a></li>
+                        <li><a href="#" class="text-ivory text-decoration-none">Digital PR</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 mb-4">
+                    <h6 class="text-gold fw-bold mb-3">Contact Info</h6>
+                    <p class="small">
+                        <i class="bi bi-geo-alt text-gold"></i> 123 Business Ave, Suite 100<br>
+                        New York, NY 10001<br><br>
+                        <i class="bi bi-telephone text-gold"></i> +1 (555) 123-4567<br>
+                        <i class="bi bi-envelope text-gold"></i> info@prestigepr.com
+                    </p>
+                </div>
+            </div>
+            
+            <hr class="border-gold">
+            
+            <div class="row">
+                <div class="text-center">
+                <p class="opacity-75 mb-0">&copy; 2026 Prestige PR & Communications. All rights reserved.</p>
+            </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Case Study Modal -->
+    <div class="modal fade" id="caseModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-black text-ivory">
+                <div class="modal-header border-gold">
+                    <h5 class="modal-title text-gold" id="modalTitle">Case Study Details</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Dynamic content will be loaded here -->
+                </div>
+                <div class="modal-footer border-gold">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="contact.html" class="btn btn-gold">Start Similar Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
