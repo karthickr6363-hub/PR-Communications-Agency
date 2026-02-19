@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prestige PR - Media & Press Command Center</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+    <link rel="icon" type="image/png"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    
+
     <style>
         .news-ticker {
             background-color: var(--obsidian-black);
@@ -23,36 +26,41 @@
             overflow: hidden;
             position: relative;
         }
-        
+
         .ticker-content {
             display: flex;
             animation: scroll-left 30s linear infinite;
             white-space: nowrap;
         }
-        
+
         .ticker-item {
             padding: 0 2rem;
             color: var(--ivory-white);
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        
+
         .ticker-item:hover {
             color: var(--royal-gold);
         }
-        
+
         @keyframes scroll-left {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
-        
+
         .media-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-        
+
         .media-card {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -62,7 +70,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .media-card::before {
             content: '';
             position: absolute;
@@ -73,22 +81,22 @@
             background: linear-gradient(90deg, transparent, rgba(198, 162, 74, 0.1), transparent);
             transition: left 0.5s ease;
         }
-        
+
         .media-card:hover::before {
             left: 100%;
         }
-        
+
         .media-card:hover {
             transform: translateY(-5px);
             border-color: var(--royal-gold);
             box-shadow: 0 15px 30px rgba(198, 162, 74, 0.2);
         }
-        
+
         .crisis-timeline {
             position: relative;
             padding: 2rem 0;
         }
-        
+
         .timeline-line {
             position: absolute;
             left: 50%;
@@ -98,7 +106,7 @@
             background: linear-gradient(180deg, var(--royal-gold), transparent);
             transform: translateX(-50%);
         }
-        
+
         .timeline-item {
             position: relative;
             margin-bottom: 3rem;
@@ -106,12 +114,12 @@
             transform: translateY(30px);
             transition: all 0.6s ease;
         }
-        
+
         .timeline-item.active {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         .timeline-dot {
             position: absolute;
             left: 50%;
@@ -123,7 +131,7 @@
             transform: translate(-50%, -50%);
             z-index: 2;
         }
-        
+
         .timeline-content {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -132,20 +140,20 @@
             width: 45%;
             transition: all 0.3s ease;
         }
-        
+
         .timeline-item:nth-child(odd) .timeline-content {
             margin-left: auto;
         }
-        
+
         .timeline-item:nth-child(even) .timeline-content {
             margin-right: auto;
         }
-        
+
         .timeline-content:hover {
             border-color: var(--royal-gold);
             box-shadow: 0 10px 25px rgba(198, 162, 74, 0.2);
         }
-        
+
         .live-indicator {
             display: inline-block;
             width: 10px;
@@ -155,26 +163,34 @@
             margin-right: 0.5rem;
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
-        
+
         .press-logo {
             height: 60px;
             filter: grayscale(100%);
             opacity: 0.6;
             transition: all 0.3s ease;
         }
-        
+
         .press-logo:hover {
             filter: grayscale(0%);
             opacity: 1;
             transform: scale(1.1);
         }
-        
+
         .thought-leadership-card {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -183,52 +199,59 @@
             margin-bottom: 2rem;
             transition: all 0.3s ease;
         }
-        
+
         .thought-leadership-card:hover {
             border-color: var(--royal-gold);
             transform: translateX(10px);
         }
-        
+
         .animated-grid {
             position: relative;
             overflow: hidden;
         }
-        
+
         .grid-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(198, 162, 74, 0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(198, 162, 74, 0.1) 1px, transparent 1px);
             background-size: 50px 50px;
             animation: grid-move 10s linear infinite;
         }
-        
+
         @keyframes grid-move {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(50px, 50px);
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-xl navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
                 <i class="bi bi-briefcase-fill text-gold"></i> Prestige PR
             </a>
-            
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link active dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link active dropdown-toggle" href="#" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Home
                         </a>
                         <ul class="dropdown-menu bg-black border-gold" aria-labelledby="homeDropdown">
@@ -246,7 +269,8 @@
                         <a class="nav-link" href="industries.html">Industries</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Pages
                         </a>
                         <ul class="dropdown-menu bg-black border-gold" aria-labelledby="pagesDropdown">
@@ -281,10 +305,14 @@
         <div class="container-fluid">
             <div class="ticker-content">
                 <span class="live-indicator"></span>
-                <a href="#" class="ticker-item"><strong>BREAKING:</strong> Prestige PR secures major coverage for tech client in Forbes</a>
-                <a href="#" class="ticker-item"><strong>UPDATE:</strong> Crisis management team successfully resolves healthcare brand situation</a>
-                <a href="#" class="ticker-item"><strong>NEWS:</strong> CEO featured in Bloomberg discussing future of PR</a>
-                <a href="#" class="ticker-item"><strong>ANNOUNCEMENT:</strong> New digital PR service launch shows 300% ROI increase</a>
+                <a href="#" class="ticker-item"><strong>BREAKING:</strong> Prestige PR secures major coverage for tech
+                    client in Forbes</a>
+                <a href="#" class="ticker-item"><strong>UPDATE:</strong> Crisis management team successfully resolves
+                    healthcare brand situation</a>
+                <a href="#" class="ticker-item"><strong>NEWS:</strong> CEO featured in Bloomberg discussing future of
+                    PR</a>
+                <a href="#" class="ticker-item"><strong>ANNOUNCEMENT:</strong> New digital PR service launch shows 300%
+                    ROI increase</a>
                 <a href="#" class="ticker-item"><strong>RECOGNITION:</strong> Named Agency of the Year by PR Week</a>
             </div>
         </div>
@@ -301,7 +329,8 @@
                             Media & Press<br>
                             <span class="text-gold">Command Center</span>
                         </h1>
-                        <p class="lead mb-4">Real-time media monitoring, crisis response, and brand narrative control - all in one powerful platform.</p>
+                        <p class="lead mb-4">Real-time media monitoring, crisis response, and brand narrative control -
+                            all in one powerful platform.</p>
                         <div class="d-flex gap-3 mb-5">
                             <div class="stat-badge">
                                 <h3 class="text-gold mb-0">24/7</h3>
@@ -312,8 +341,9 @@
                                 <p class="small mb-0">Media Outlets</p>
                             </div>
                             <div class="stat-badge">
-                                <h3 class="text-gold mb-0">< 1hr</h3>
-                                <p class="small mb-0">Response Time</p>
+                                <h3 class="text-gold mb-0">
+                                    < 1hr</h3>
+                                        <p class="small mb-0">Response Time</p>
                             </div>
                         </div>
                         <div class="hero-buttons">
@@ -337,7 +367,8 @@
                             <div class="feed-item mb-3">
                                 <small class="text-gold">5 minutes ago</small>
                                 <h6>Reuters</h6>
-                                <p class="small mb-0">Healthcare brand responds to market concerns with transparency...</p>
+                                <p class="small mb-0">Healthcare brand responds to market concerns with transparency...
+                                </p>
                             </div>
                             <div class="feed-item mb-3">
                                 <small class="text-gold">8 minutes ago</small>
@@ -360,20 +391,26 @@
                     <div class="gold-line mx-auto"></div>
                 </div>
             </div>
-            
+
             <div class="row mb-5">
                 <div class="col-lg-12">
                     <div class="d-flex flex-wrap justify-content-center align-items-center gap-4">
-                        <img src="https://via.placeholder.com/150x60/0B0D10/C6A24A?text=Forbes" alt="Forbes" class="press-logo">
-                        <img src="https://via.placeholder.com/150x60/0B0D10/C6A24A?text=Bloomberg" alt="Bloomberg" class="press-logo">
-                        <img src="https://via.placeholder.com/150x60/0B0D10/C6A24A?text=TechCrunch" alt="TechCrunch" class="press-logo">
-                        <img src="https://via.placeholder.com/150x60/0B0D10/C6A24A?text=Reuters" alt="Reuters" class="press-logo">
-                        <img src="https://via.placeholder.com/150x60/0B0D10/C6A24A?text=WSJ" alt="Wall Street Journal" class="press-logo">
-                        <img src="https://via.placeholder.com/150x60/0B0D10/C6A24A?text=FT" alt="Financial Times" class="press-logo">
+                        <img src="https://via.placeholder.com/150x60/0B0D10/C6A24A?text=Forbes" alt="Forbes"
+                            class="press-logo">
+                        <img src="https://via.placeholder.com/150x60/0B0D10/C6A24A?text=Bloomberg" alt="Bloomberg"
+                            class="press-logo">
+                        <img src="https://via.placeholder.com/150x60/0B0D10/C6A24A?text=TechCrunch" alt="TechCrunch"
+                            class="press-logo">
+                        <img src="https://via.placeholder.com/150x60/0B0D10/C6A24A?text=Reuters" alt="Reuters"
+                            class="press-logo">
+                        <img src="https://via.placeholder.com/150x60/0B0D10/C6A24A?text=WSJ" alt="Wall Street Journal"
+                            class="press-logo">
+                        <img src="https://via.placeholder.com/150x60/0B0D10/C6A24A?text=FT" alt="Financial Times"
+                            class="press-logo">
                     </div>
                 </div>
             </div>
-            
+
             <div class="media-grid">
                 <div class="media-card">
                     <div class="d-flex justify-content-between align-items-start mb-3">
@@ -381,27 +418,30 @@
                         <small class="text-gold">2 hours ago</small>
                     </div>
                     <h6>AI Startup Raises $50M Series B</h6>
-                    <p class="small mb-3">Revolutionary AI platform secures major funding following strategic PR campaign by Prestige PR.</p>
+                    <p class="small mb-3">Revolutionary AI platform secures major funding following strategic PR
+                        campaign by Prestige PR.</p>
                     <a href="#" class="text-gold text-decoration-none">Read More <i class="bi bi-arrow-right"></i></a>
                 </div>
-                
+
                 <div class="media-card">
                     <div class="d-flex justify-content-between align-items-start mb-3">
                         <h5 class="text-gold">Forbes</h5>
                         <small class="text-gold">4 hours ago</small>
                     </div>
                     <h6>Healthcare Brand's Transparency Wins</h6>
-                    <p class="small mb-3">How crisis management turned a potential disaster into a trust-building opportunity.</p>
+                    <p class="small mb-3">How crisis management turned a potential disaster into a trust-building
+                        opportunity.</p>
                     <a href="#" class="text-gold text-decoration-none">Read More <i class="bi bi-arrow-right"></i></a>
                 </div>
-                
+
                 <div class="media-card">
                     <div class="d-flex justify-content-between align-items-start mb-3">
                         <h5 class="text-gold">Bloomberg</h5>
                         <small class="text-gold">6 hours ago</small>
                     </div>
                     <h6>Future of Digital PR</h6>
-                    <p class="small mb-3">Industry leaders discuss the evolution of public relations in the digital age.</p>
+                    <p class="small mb-3">Industry leaders discuss the evolution of public relations in the digital age.
+                    </p>
                     <a href="#" class="text-gold text-decoration-none">Read More <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
@@ -417,15 +457,16 @@
                     <div class="gold-line mx-auto"></div>
                 </div>
             </div>
-            
+
             <div class="crisis-timeline">
                 <div class="timeline-line"></div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h4 class="text-gold">1. Monitor</h4>
-                        <p>24/7 real-time monitoring across all media channels and social platforms to detect potential issues before they escalate.</p>
+                        <p>24/7 real-time monitoring across all media channels and social platforms to detect potential
+                            issues before they escalate.</p>
                         <ul class="small">
                             <li>AI-powered sentiment analysis</li>
                             <li>Social media listening</li>
@@ -433,12 +474,13 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h4 class="text-gold">2. Respond</h4>
-                        <p>Immediate strategic response with pre-approved messaging and coordinated communication across all channels.</p>
+                        <p>Immediate strategic response with pre-approved messaging and coordinated communication across
+                            all channels.</p>
                         <ul class="small">
                             <li>Rapid response team activation</li>
                             <li>Stakeholder notification</li>
@@ -446,12 +488,13 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h4 class="text-gold">3. Control Narrative</h4>
-                        <p>Proactive narrative management to ensure accurate information and maintain brand reputation.</p>
+                        <p>Proactive narrative management to ensure accurate information and maintain brand reputation.
+                        </p>
                         <ul class="small">
                             <li>Thought leadership positioning</li>
                             <li>Positive story placement</li>
@@ -459,12 +502,13 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <h4 class="text-gold">4. Recover Trust</h4>
-                        <p>Long-term reputation rebuilding strategies to restore stakeholder confidence and brand equity.</p>
+                        <p>Long-term reputation rebuilding strategies to restore stakeholder confidence and brand
+                            equity.</p>
                         <ul class="small">
                             <li>Transparency initiatives</li>
                             <li>Community engagement</li>
@@ -485,7 +529,7 @@
                     <div class="gold-line mx-auto"></div>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-4">
                     <div class="thought-leadership-card">
@@ -497,11 +541,13 @@
                             </div>
                         </div>
                         <h6>The Future of Crisis Communication in the Digital Age</h6>
-                        <p class="small">Exploring how AI and real-time data are revolutionizing crisis management strategies.</p>
-                        <a href="#" class="text-gold text-decoration-none">Read More <i class="bi bi-arrow-right"></i></a>
+                        <p class="small">Exploring how AI and real-time data are revolutionizing crisis management
+                            strategies.</p>
+                        <a href="#" class="text-gold text-decoration-none">Read More <i
+                                class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4">
                     <div class="thought-leadership-card">
                         <div class="d-flex align-items-center mb-3">
@@ -512,11 +558,12 @@
                             </div>
                         </div>
                         <h6>Measuring PR ROI in the Age of Digital Analytics</h6>
-                        <p class="small">Comprehensive guide to tracking and demonstrating the business impact of PR campaigns.</p>
+                        <p class="small">Comprehensive guide to tracking and demonstrating the business impact of PR
+                            campaigns.</p>
                         <a href="#" class="text-gold text-decoration-none">Download <i class="bi bi-download"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4">
                     <div class="thought-leadership-card">
                         <div class="d-flex align-items-center mb-3">
@@ -527,7 +574,8 @@
                             </div>
                         </div>
                         <h6>PR Summit 2024 - Keynote Speaker</h6>
-                        <p class="small">CEO Sarah Johnson will deliver keynote on "Building Resilient Brands Through Strategic Communication"</p>
+                        <p class="small">CEO Sarah Johnson will deliver keynote on "Building Resilient Brands Through
+                            Strategic Communication"</p>
                         <a href="#" class="text-gold text-decoration-none">Register <i class="bi bi-calendar"></i></a>
                     </div>
                 </div>
@@ -541,7 +589,8 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <h2 class="display-4 fw-bold text-black mb-4">Ready to Command Your Media Presence?</h2>
-                    <p class="lead text-black mb-4">Join the brands that trust Prestige PR for real-time media monitoring and crisis management.</p>
+                    <p class="lead text-black mb-4">Join the brands that trust Prestige PR for real-time media
+                        monitoring and crisis management.</p>
                     <div class="d-flex gap-3 justify-content-center">
                         <a href="contact.html" class="btn btn-black btn-lg">Start Monitoring</a>
                         <a href="press-room.html" class="btn btn-outline-black btn-lg">View Press Kit</a>
@@ -565,7 +614,7 @@
                         <a href="#" class="text-gold"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-2 mb-4">
                     <h6 class="text-gold fw-bold mb-3">Quick Links</h6>
                     <ul class="list-unstyled">
@@ -575,7 +624,7 @@
                         <li><a href="contact.html" class="text-ivory text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-3 mb-4">
                     <h6 class="text-gold fw-bold mb-3">Services</h6>
                     <ul class="list-unstyled">
@@ -585,7 +634,7 @@
                         <li><a href="#" class="text-ivory text-decoration-none">Digital PR</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-3 mb-4">
                     <h6 class="text-gold fw-bold mb-3">Contact Info</h6>
                     <p class="small">
@@ -596,13 +645,13 @@
                     </p>
                 </div>
             </div>
-            
+
             <hr class="border-gold">
-            
+
             <div class="row">
                 <div class="text-center">
-                <p class="opacity-75 mb-0">&copy; 2026 Prestige PR & Communications. All rights reserved.</p>
-            </div>
+                    <p class="opacity-75 mb-0">&copy; 2026 Prestige PR & Communications. All rights reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
@@ -611,16 +660,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="js/main.js"></script>
-    
+
     <script>
         // Timeline Animation on Scroll
         const timelineItems = document.querySelectorAll('.timeline-item');
-        
+
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
         };
-        
+
         const timelineObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -628,11 +677,11 @@
                 }
             });
         }, observerOptions);
-        
+
         timelineItems.forEach(item => {
             timelineObserver.observe(item);
         });
-        
+
         // Live Feed Simulation
         function updateLiveFeed() {
             const feedItems = [
@@ -641,13 +690,14 @@
                 { outlet: 'Forbes', time: '5 min ago', content: 'CEO shares insights on future trends...' },
                 { outlet: 'Bloomberg', time: '7 min ago', content: 'Financial markets show strong recovery...' }
             ];
-            
+
             // This would typically fetch from a real API
             console.log('Updating live feed...');
         }
-        
+
         // Update feed every 30 seconds
         setInterval(updateLiveFeed, 30000);
     </script>
 </body>
+
 </html>

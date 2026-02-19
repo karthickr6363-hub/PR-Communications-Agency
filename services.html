@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - Prestige PR & Communications</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+    <link rel="icon" type="image/png"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    
+
     <style>
         .service-hero {
             background: linear-gradient(135deg, var(--obsidian-black), rgba(198, 162, 74, 0.1));
             padding: 6rem 0 4rem;
         }
-        
+
         .service-panel {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -29,12 +32,12 @@
             overflow: hidden;
             transition: all 0.3s ease;
         }
-        
+
         .service-panel:hover {
             border-color: var(--royal-gold);
             box-shadow: 0 10px 30px rgba(198, 162, 74, 0.2);
         }
-        
+
         .service-header {
             padding: 1.5rem;
             cursor: pointer;
@@ -43,16 +46,16 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .service-header:hover {
             background-color: rgba(198, 162, 74, 0.1);
         }
-        
+
         .service-header.active {
             background-color: rgba(198, 162, 74, 0.2);
             border-bottom: 1px solid var(--royal-gold);
         }
-        
+
         .service-icon {
             width: 60px;
             height: 60px;
@@ -66,45 +69,45 @@
             margin-right: 1.5rem;
             flex-shrink: 0;
         }
-        
+
         .service-content {
             padding: 0 1.5rem;
             max-height: 0;
             overflow: hidden;
             transition: all 0.3s ease;
         }
-        
+
         .service-content.show {
             padding: 1.5rem;
             max-height: 1000px;
         }
-        
+
         .feature-list {
             list-style: none;
             padding: 0;
         }
-        
+
         .feature-list li {
             padding: 0.5rem 0;
             border-bottom: 1px solid rgba(198, 162, 74, 0.1);
             transition: all 0.3s ease;
         }
-        
+
         .feature-list li:hover {
             padding-left: 1rem;
             color: var(--royal-gold);
         }
-        
+
         .feature-list li:last-child {
             border-bottom: none;
         }
-        
+
         .process-step {
             text-align: center;
             padding: 2rem;
             position: relative;
         }
-        
+
         .process-step::after {
             content: '';
             position: absolute;
@@ -115,11 +118,11 @@
             background: linear-gradient(90deg, var(--royal-gold), transparent);
             transform: translateY(-50%);
         }
-        
+
         .process-step:last-child::after {
             display: none;
         }
-        
+
         .process-number {
             width: 60px;
             height: 60px;
@@ -133,7 +136,7 @@
             color: var(--obsidian-black);
             margin: 0 auto 1rem;
         }
-        
+
         .pricing-card {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -144,12 +147,12 @@
             height: 100%;
             position: relative;
         }
-        
+
         .pricing-card.featured {
             border-color: var(--royal-gold);
             transform: scale(1.05);
         }
-        
+
         .pricing-card.featured::before {
             content: 'MOST POPULAR';
             position: absolute;
@@ -163,57 +166,59 @@
             font-size: 0.75rem;
             font-weight: bold;
         }
-        
+
         .pricing-card:hover {
             transform: translateY(-10px);
             border-color: var(--royal-gold);
             box-shadow: 0 20px 40px rgba(198, 162, 74, 0.3);
         }
-        
+
         .pricing-card.featured:hover {
             transform: scale(1.05) translateY(-10px);
         }
-        
+
         .price {
             font-size: 3rem;
             font-weight: bold;
             color: var(--royal-gold);
             margin: 1rem 0;
         }
-        
+
         .price-period {
             font-size: 1rem;
             color: var(--ivory-white);
             opacity: 0.8;
         }
-        
+
         @media (max-width: 768px) {
             .process-step::after {
                 display: none;
             }
-            
+
             .pricing-card.featured {
                 transform: scale(1);
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-xl navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
                 <i class="bi bi-briefcase-fill text-gold"></i> Prestige PR
             </a>
-            
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Home
                         </a>
                         <ul class="dropdown-menu bg-black border-gold" aria-labelledby="homeDropdown">
@@ -231,7 +236,8 @@
                         <a class="nav-link" href="industries.html">Industries</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Pages
                         </a>
                         <ul class="dropdown-menu bg-black border-gold" aria-labelledby="pagesDropdown">
@@ -267,7 +273,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-8 mx-auto text-center">
                     <h1 class="display-3 fw-bold mb-4">Our Services</h1>
-                    <p class="lead mb-4">Comprehensive PR and communication solutions designed to elevate your brand, protect your reputation, and drive measurable business results.</p>
+                    <p class="lead mb-4">Comprehensive PR and communication solutions designed to elevate your brand,
+                        protect your reputation, and drive measurable business results.</p>
                     <div class="gold-line mx-auto"></div>
                 </div>
             </div>
@@ -279,7 +286,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    
+
                     <!-- PR Strategy Panel -->
                     <div class="service-panel">
                         <div class="service-header" onclick="toggleService('pr-strategy')">
@@ -289,7 +296,8 @@
                                 </div>
                                 <div>
                                     <h4 class="mb-1">PR Strategy & Planning</h4>
-                                    <p class="mb-0 opacity-75">Strategic communication frameworks aligned with business objectives</p>
+                                    <p class="mb-0 opacity-75">Strategic communication frameworks aligned with business
+                                        objectives</p>
                                 </div>
                             </div>
                             <i class="bi bi-chevron-down" id="pr-strategy-icon"></i>
@@ -299,12 +307,17 @@
                                 <div class="col-md-6">
                                     <h5 class="text-gold mb-3">What We Do</h5>
                                     <ul class="feature-list">
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Comprehensive brand audit</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Comprehensive brand audit
+                                        </li>
                                         <li><i class="bi bi-check-circle text-gold me-2"></i>Competitive analysis</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Target audience identification</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Messaging framework development</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Channel strategy planning</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Campaign roadmap creation</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Target audience
+                                            identification</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Messaging framework
+                                            development</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Channel strategy planning
+                                        </li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Campaign roadmap creation
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
@@ -314,7 +327,8 @@
                                         <li><i class="bi bi-file-text text-gold me-2"></i>Messaging guidelines</li>
                                         <li><i class="bi bi-file-text text-gold me-2"></i>Media target list</li>
                                         <li><i class="bi bi-file-text text-gold me-2"></i>Content calendar</li>
-                                        <li><i class="bi bi-file-text text-gold me-2"></i>Performance metrics framework</li>
+                                        <li><i class="bi bi-file-text text-gold me-2"></i>Performance metrics framework
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -333,7 +347,8 @@
                                 </div>
                                 <div>
                                     <h4 class="mb-1">Digital PR & Online Reputation</h4>
-                                    <p class="mb-0 opacity-75">Maximize your digital footprint and online brand presence</p>
+                                    <p class="mb-0 opacity-75">Maximize your digital footprint and online brand presence
+                                    </p>
                                 </div>
                             </div>
                             <i class="bi bi-chevron-down" id="digital-pr-icon"></i>
@@ -343,21 +358,30 @@
                                 <div class="col-md-6">
                                     <h5 class="text-gold mb-3">What We Do</h5>
                                     <ul class="feature-list">
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Online reputation monitoring</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>SEO-optimized press releases</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Influencer outreach campaigns</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Social media PR strategy</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Content marketing integration</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Online review management</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Online reputation
+                                            monitoring</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>SEO-optimized press
+                                            releases</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Influencer outreach
+                                            campaigns</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Social media PR strategy
+                                        </li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Content marketing
+                                            integration</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Online review management
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
                                     <h5 class="text-gold mb-3">Deliverables</h5>
                                     <ul class="feature-list">
                                         <li><i class="bi bi-file-text text-gold me-2"></i>Digital PR strategy</li>
-                                        <li><i class="bi bi-file-text text-gold me-2"></i>Monthly reputation reports</li>
-                                        <li><i class="bi bi-file-text text-gold me-2"></i>Influencer partnership plan</li>
-                                        <li><i class="bi bi-file-text text-gold me-2"></i>Social media content calendar</li>
+                                        <li><i class="bi bi-file-text text-gold me-2"></i>Monthly reputation reports
+                                        </li>
+                                        <li><i class="bi bi-file-text text-gold me-2"></i>Influencer partnership plan
+                                        </li>
+                                        <li><i class="bi bi-file-text text-gold me-2"></i>Social media content calendar
+                                        </li>
                                         <li><i class="bi bi-file-text text-gold me-2"></i>SEO performance tracking</li>
                                     </ul>
                                 </div>
@@ -387,12 +411,18 @@
                                 <div class="col-md-6">
                                     <h5 class="text-gold mb-3">What We Do</h5>
                                     <ul class="feature-list">
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Brand identity development</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Corporate narrative creation</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Visual identity guidelines</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Brand positioning strategy</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Internal branding programs</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Brand experience design</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Brand identity development
+                                        </li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Corporate narrative
+                                            creation</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Visual identity guidelines
+                                        </li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Brand positioning strategy
+                                        </li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Internal branding programs
+                                        </li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Brand experience design
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
@@ -401,7 +431,8 @@
                                         <li><i class="bi bi-file-text text-gold me-2"></i>Brand guidelines document</li>
                                         <li><i class="bi bi-file-text text-gold me-2"></i>Corporate story deck</li>
                                         <li><i class="bi bi-file-text text-gold me-2"></i>Visual identity system</li>
-                                        <li><i class="bi bi-file-text text-gold me-2"></i>Brand architecture framework</li>
+                                        <li><i class="bi bi-file-text text-gold me-2"></i>Brand architecture framework
+                                        </li>
                                         <li><i class="bi bi-file-text text-gold me-2"></i>Employee brand toolkit</li>
                                     </ul>
                                 </div>
@@ -421,7 +452,8 @@
                                 </div>
                                 <div>
                                     <h4 class="mb-1">Event PR & Management</h4>
-                                    <p class="mb-0 opacity-75">Create memorable events that generate maximum media coverage</p>
+                                    <p class="mb-0 opacity-75">Create memorable events that generate maximum media
+                                        coverage</p>
                                 </div>
                             </div>
                             <i class="bi bi-chevron-down" id="event-pr-icon"></i>
@@ -431,12 +463,17 @@
                                 <div class="col-md-6">
                                     <h5 class="text-gold mb-3">What We Do</h5>
                                     <ul class="feature-list">
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Event strategy and planning</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Media outreach and invitations</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Press conference coordination</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Live media coverage management</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Event strategy and planning
+                                        </li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Media outreach and
+                                            invitations</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Press conference
+                                            coordination</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Live media coverage
+                                            management</li>
                                         <li><i class="bi bi-check-circle text-gold me-2"></i>Post-event publicity</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Virtual event production</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Virtual event production
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
@@ -465,7 +502,8 @@
                                 </div>
                                 <div>
                                     <h4 class="mb-1">Reputation Management</h4>
-                                    <p class="mb-0 opacity-75">Protect and enhance your brand's reputation in the digital age</p>
+                                    <p class="mb-0 opacity-75">Protect and enhance your brand's reputation in the
+                                        digital age</p>
                                 </div>
                             </div>
                             <i class="bi bi-chevron-down" id="reputation-management-icon"></i>
@@ -475,12 +513,18 @@
                                 <div class="col-md-6">
                                     <h5 class="text-gold mb-3">What We Do</h5>
                                     <ul class="feature-list">
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>24/7 reputation monitoring</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Crisis prevention strategies</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Negative content mitigation</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Positive content amplification</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Stakeholder communication</li>
-                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Reputation recovery campaigns</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>24/7 reputation monitoring
+                                        </li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Crisis prevention
+                                            strategies</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Negative content mitigation
+                                        </li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Positive content
+                                            amplification</li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Stakeholder communication
+                                        </li>
+                                        <li><i class="bi bi-check-circle text-gold me-2"></i>Reputation recovery
+                                            campaigns</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6">
@@ -515,37 +559,41 @@
                     <p class="lead text-black">A proven methodology that delivers consistent results</p>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="process-step">
                         <div class="process-number">1</div>
                         <h5 class="text-black">Discovery</h5>
-                        <p class="small text-black">We dive deep into your brand, market, and objectives to understand your unique challenges and opportunities.</p>
+                        <p class="small text-black">We dive deep into your brand, market, and objectives to understand
+                            your unique challenges and opportunities.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <div class="process-step">
                         <div class="process-number">2</div>
                         <h5 class="text-black">Strategy</h5>
-                        <p class="small text-black">Our team develops a comprehensive PR strategy tailored to your specific goals and target audience.</p>
+                        <p class="small text-black">Our team develops a comprehensive PR strategy tailored to your
+                            specific goals and target audience.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <div class="process-step">
                         <div class="process-number">3</div>
                         <h5 class="text-black">Execution</h5>
-                        <p class="small text-black">We implement the strategy with precision, leveraging our media relationships and digital expertise.</p>
+                        <p class="small text-black">We implement the strategy with precision, leveraging our media
+                            relationships and digital expertise.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <div class="process-step">
                         <div class="process-number">4</div>
                         <h5 class="text-black">Optimization</h5>
-                        <p class="small text-black">Continuous monitoring and refinement ensure we're always maximizing your PR investment.</p>
+                        <p class="small text-black">Continuous monitoring and refinement ensure we're always maximizing
+                            your PR investment.</p>
                     </div>
                 </div>
             </div>
@@ -558,7 +606,8 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <h2 class="display-4 fw-bold text-black mb-4">Ready to Elevate Your Brand?</h2>
-                    <p class="lead text-black mb-4">Let's discuss how our strategic PR services can help you achieve your business goals.</p>
+                    <p class="lead text-black mb-4">Let's discuss how our strategic PR services can help you achieve
+                        your business goals.</p>
                     <a href="contact.html" class="btn btn-black btn-lg">Schedule Consultation</a>
                 </div>
             </div>
@@ -579,7 +628,7 @@
                         <a href="#" class="text-gold"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-2 mb-4">
                     <h6 class="text-gold fw-bold mb-3">Quick Links</h6>
                     <ul class="list-unstyled">
@@ -589,7 +638,7 @@
                         <li><a href="contact.html" class="text-ivory text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-3 mb-4">
                     <h6 class="text-gold fw-bold mb-3">Services</h6>
                     <ul class="list-unstyled">
@@ -599,7 +648,7 @@
                         <li><a href="#" class="text-ivory text-decoration-none">Digital PR</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-3 mb-4">
                     <h6 class="text-gold fw-bold mb-3">Contact Info</h6>
                     <p class="small">
@@ -610,13 +659,13 @@
                     </p>
                 </div>
             </div>
-            
+
             <hr class="border-gold">
-            
+
             <div class="row">
                 <div class="text-center">
-                <p class="opacity-75 mb-0">&copy; 2026 Prestige PR & Communications. All rights reserved.</p>
-            </div>
+                    <p class="opacity-75 mb-0">&copy; 2026 Prestige PR & Communications. All rights reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
@@ -625,16 +674,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="js/main.js"></script>
-    
+
     <script>
         function toggleService(serviceId) {
             const content = document.getElementById(serviceId);
             const header = content.previousElementSibling;
             const icon = document.getElementById(serviceId + '-icon');
-            
+
             content.classList.toggle('show');
             header.classList.toggle('active');
-            
+
             if (content.classList.contains('show')) {
                 icon.classList.remove('bi-chevron-down');
                 icon.classList.add('bi-chevron-up');
@@ -645,4 +694,5 @@
         }
     </script>
 </body>
+
 </html>

@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Prestige PR & Communications</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+    <link rel="icon" type="image/png"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
     <link rel="stylesheet" href="css/styles.css">
-    
+
     <style>
         .contact-hero {
             background: linear-gradient(135deg, var(--obsidian-black) 0%, rgba(198, 162, 74, 0.1) 100%);
@@ -21,7 +24,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .contact-hero::before {
             content: '';
             position: absolute;
@@ -32,7 +35,7 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(198,162,74,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
             opacity: 0.3;
         }
-        
+
         .contact-card {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -41,13 +44,13 @@
             transition: all 0.3s ease;
             height: 100%;
         }
-        
+
         .contact-card:hover {
             border-color: var(--royal-gold);
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(198, 162, 74, 0.2);
         }
-        
+
         .contact-icon {
             width: 60px;
             height: 60px;
@@ -60,15 +63,16 @@
             font-size: 1.5rem;
             color: var(--obsidian-black);
         }
-        
+
         .contact-form {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
             border-radius: 12px;
             padding: 2rem;
         }
-        
-        .form-control, .form-select {
+
+        .form-control,
+        .form-select {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.3);
             color: var(--ivory-white);
@@ -76,24 +80,25 @@
             padding: 0.75rem 1rem;
             transition: all 0.3s ease;
         }
-        
-        .form-control:focus, .form-select:focus {
+
+        .form-control:focus,
+        .form-select:focus {
             background-color: rgba(245, 245, 240, 0.1);
             border-color: var(--royal-gold);
             box-shadow: 0 0 0 0.2rem rgba(198, 162, 74, 0.25);
             color: var(--ivory-white);
         }
-        
+
         .form-control::placeholder {
             color: rgba(245, 245, 240, 0.5);
         }
-        
+
         .form-label {
             color: var(--ivory-white);
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
-        
+
         .office-card {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -102,13 +107,13 @@
             margin-bottom: 1.5rem;
             transition: all 0.3s ease;
         }
-        
+
         .office-card:hover {
             border-color: var(--royal-gold);
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(198, 162, 74, 0.2);
         }
-        
+
         .office-image {
             width: 100%;
             height: 200px;
@@ -121,7 +126,7 @@
             font-size: 3rem;
             color: var(--obsidian-black);
         }
-        
+
         .team-member {
             text-align: center;
             padding: 1.5rem;
@@ -130,12 +135,12 @@
             border-radius: 12px;
             transition: all 0.3s ease;
         }
-        
+
         .team-member:hover {
             border-color: var(--royal-gold);
             transform: translateY(-5px);
         }
-        
+
         .team-avatar {
             width: 80px;
             height: 80px;
@@ -149,7 +154,7 @@
             color: var(--obsidian-black);
             font-weight: bold;
         }
-        
+
         .faq-item {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -157,7 +162,7 @@
             margin-bottom: 1rem;
             overflow: hidden;
         }
-        
+
         .faq-question {
             width: 100%;
             background: none;
@@ -172,33 +177,33 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .faq-question:hover {
             background-color: rgba(198, 162, 74, 0.1);
         }
-        
+
         .faq-answer {
             padding: 0 1.5rem 1rem;
             color: var(--ivory-white);
             opacity: 0.75;
             display: none;
         }
-        
+
         .faq-item.active .faq-answer {
             display: block;
         }
-        
+
         .faq-item.active .faq-question i {
             transform: rotate(180deg);
         }
-        
+
         .social-links {
             display: flex;
             gap: 1rem;
             justify-content: center;
             margin-top: 1rem;
         }
-        
+
         .social-link {
             width: 50px;
             height: 50px;
@@ -212,29 +217,31 @@
             transition: all 0.3s ease;
             font-size: 1.25rem;
         }
-        
+
         .social-link:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(198, 162, 74, 0.3);
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-xl navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
                 <i class="bi bi-briefcase-fill text-gold"></i> Prestige PR
             </a>
-            
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Home
                         </a>
                         <ul class="dropdown-menu bg-black border-gold" aria-labelledby="homeDropdown">
@@ -252,7 +259,8 @@
                         <a class="nav-link" href="industries.html">Industries</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Pages
                         </a>
                         <ul class="dropdown-menu bg-black border-gold" aria-labelledby="pagesDropdown">
@@ -288,7 +296,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-8 mx-auto text-center">
                     <h1 class="display-3 fw-bold mb-4">Get in Touch</h1>
-                    <p class="lead mb-4">Ready to elevate your brand's reputation? Let's start a conversation about how we can help you achieve your PR and communications goals.</p>
+                    <p class="lead mb-4">Ready to elevate your brand's reputation? Let's start a conversation about how
+                        we can help you achieve your PR and communications goals.</p>
                     <div class="d-flex justify-content-center gap-3">
                         <a href="#contact-form" class="btn btn-gold btn-lg">Send Message</a>
                         <a href="tel:+15551234567" class="btn btn-outline-gold btn-lg">Call Us</a>
@@ -320,7 +329,8 @@
                         </div>
                         <h4 class="mb-3">Email</h4>
                         <p class="opacity-75 mb-2">General Inquiries</p>
-                        <a href="mailto:info@prestigepr.com" class="text-gold text-decoration-none">info@prestigepr.com</a>
+                        <a href="mailto:info@prestigepr.com"
+                            class="text-gold text-decoration-none">info@prestigepr.com</a>
                         <p class="opacity-75 mt-2">24/7 Response</p>
                     </div>
                 </div>
@@ -370,7 +380,7 @@
                                     <input type="text" class="form-control" id="lastName" required>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="email" class="form-label">Email Address *</label>
@@ -409,7 +419,8 @@
 
                             <div class="mb-3">
                                 <label for="message" class="form-label">Message *</label>
-                                <textarea class="form-control" id="message" rows="5" placeholder="Tell us about your project and how we can help..." required></textarea>
+                                <textarea class="form-control" id="message" rows="5"
+                                    placeholder="Tell us about your project and how we can help..." required></textarea>
                             </div>
 
                             <div class="mb-3">
@@ -444,27 +455,31 @@
                         </form>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4">
                     <div class="contact-form">
                         <h4 class="mb-4">Why Choose Prestige PR?</h4>
                         <div class="mb-4">
                             <h5 class="text-gold mb-2"><i class="bi bi-check-circle me-2"></i>Proven Results</h5>
-                            <p class="opacity-75">15+ years of delivering exceptional PR campaigns for Fortune 500 companies and innovative startups.</p>
+                            <p class="opacity-75">15+ years of delivering exceptional PR campaigns for Fortune 500
+                                companies and innovative startups.</p>
                         </div>
                         <div class="mb-4">
                             <h5 class="text-gold mb-2"><i class="bi bi-check-circle me-2"></i>Strategic Approach</h5>
-                            <p class="opacity-75">Data-driven strategies combined with creative storytelling to maximize your brand's impact.</p>
+                            <p class="opacity-75">Data-driven strategies combined with creative storytelling to maximize
+                                your brand's impact.</p>
                         </div>
                         <div class="mb-4">
                             <h5 class="text-gold mb-2"><i class="bi bi-check-circle me-2"></i>Global Reach</h5>
-                            <p class="opacity-75">Extensive media relationships across traditional and digital platforms worldwide.</p>
+                            <p class="opacity-75">Extensive media relationships across traditional and digital platforms
+                                worldwide.</p>
                         </div>
                         <div class="mb-4">
                             <h5 class="text-gold mb-2"><i class="bi bi-check-circle me-2"></i>24/7 Support</h5>
-                            <p class="opacity-75">Round-the-clock support for crisis management and time-sensitive opportunities.</p>
+                            <p class="opacity-75">Round-the-clock support for crisis management and time-sensitive
+                                opportunities.</p>
                         </div>
-                        
+
                         <div class="text-center mt-4">
                             <h5 class="mb-3">Connect With Us</h5>
                             <div class="social-links">
@@ -504,12 +519,13 @@
                             <strong>Phone:</strong> <a href="tel:+15551234567" class="text-gold">+1 (555) 123-4567</a>
                         </p>
                         <p class="mb-2">
-                            <strong>Email:</strong> <a href="mailto:ny@prestigepr.com" class="text-gold">ny@prestigepr.com</a>
+                            <strong>Email:</strong> <a href="mailto:ny@prestigepr.com"
+                                class="text-gold">ny@prestigepr.com</a>
                         </p>
                         <button class="btn btn-outline-gold btn-sm mt-2">Get Directions</button>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 mb-4">
                     <div class="office-card">
                         <div class="office-image">
@@ -525,12 +541,13 @@
                             <strong>Phone:</strong> <a href="tel:+15559876543" class="text-gold">+1 (555) 987-6543</a>
                         </p>
                         <p class="mb-2">
-                            <strong>Email:</strong> <a href="mailto:la@prestigepr.com" class="text-gold">la@prestigepr.com</a>
+                            <strong>Email:</strong> <a href="mailto:la@prestigepr.com"
+                                class="text-gold">la@prestigepr.com</a>
                         </p>
                         <button class="btn btn-outline-gold btn-sm mt-2">Get Directions</button>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 mb-4">
                     <div class="office-card">
                         <div class="office-image">
@@ -546,7 +563,8 @@
                             <strong>Phone:</strong> <a href="tel:+442012345678" class="text-gold">+44 20 1234 5678</a>
                         </p>
                         <p class="mb-2">
-                            <strong>Email:</strong> <a href="mailto:london@prestigepr.com" class="text-gold">london@prestigepr.com</a>
+                            <strong>Email:</strong> <a href="mailto:london@prestigepr.com"
+                                class="text-gold">london@prestigepr.com</a>
                         </p>
                         <button class="btn btn-outline-gold btn-sm mt-2">Get Directions</button>
                     </div>
@@ -628,7 +646,9 @@
                             <i class="bi bi-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            We offer comprehensive PR services including strategic communications, digital PR, corporate branding, event PR, reputation management, and crisis management. Our services are tailored to meet the unique needs of each client.
+                            We offer comprehensive PR services including strategic communications, digital PR, corporate
+                            branding, event PR, reputation management, and crisis management. Our services are tailored
+                            to meet the unique needs of each client.
                         </div>
                     </div>
 
@@ -638,7 +658,9 @@
                             <i class="bi bi-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            We use a combination of metrics including media mentions, reach, sentiment analysis, website traffic, lead generation, and brand awareness. We provide detailed monthly reports with actionable insights and ROI analysis.
+                            We use a combination of metrics including media mentions, reach, sentiment analysis, website
+                            traffic, lead generation, and brand awareness. We provide detailed monthly reports with
+                            actionable insights and ROI analysis.
                         </div>
                     </div>
 
@@ -648,7 +670,9 @@
                             <i class="bi bi-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            We work across various industries including technology, healthcare, finance, startups, government, and entertainment. Our team has deep expertise in multiple sectors and adapts our approach to industry-specific challenges.
+                            We work across various industries including technology, healthcare, finance, startups,
+                            government, and entertainment. Our team has deep expertise in multiple sectors and adapts
+                            our approach to industry-specific challenges.
                         </div>
                     </div>
 
@@ -658,7 +682,9 @@
                             <i class="bi bi-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            Results vary depending on your goals and campaign scope. Some initiatives show immediate results within weeks, while comprehensive brand-building campaigns typically show significant impact within 3-6 months.
+                            Results vary depending on your goals and campaign scope. Some initiatives show immediate
+                            results within weeks, while comprehensive brand-building campaigns typically show
+                            significant impact within 3-6 months.
                         </div>
                     </div>
 
@@ -668,7 +694,9 @@
                             <i class="bi bi-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            Absolutely! We have dedicated programs for startups and small businesses with flexible pricing and scalable solutions. We understand the unique challenges faced by emerging companies and tailor our approach accordingly.
+                            Absolutely! We have dedicated programs for startups and small businesses with flexible
+                            pricing and scalable solutions. We understand the unique challenges faced by emerging
+                            companies and tailor our approach accordingly.
                         </div>
                     </div>
                 </div>
@@ -682,7 +710,8 @@
             <div class="row">
                 <div class="col-lg-4 mb-4">
                     <h5 class="text-gold mb-3">Prestige PR & Communications</h5>
-                    <p class="opacity-75">Shaping stories. Building reputation. Delivering excellence in strategic communications.</p>
+                    <p class="opacity-75">Shaping stories. Building reputation. Delivering excellence in strategic
+                        communications.</p>
                     <div class="d-flex gap-3 mt-3">
                         <a href="#" class="text-gold"><i class="bi bi-linkedin fs-5"></i></a>
                         <a href="#" class="text-gold"><i class="bi bi-twitter fs-5"></i></a>
@@ -693,10 +722,14 @@
                 <div class="col-lg-4 mb-4">
                     <h5 class="text-gold mb-3">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="about.html" class="text-ivory text-decoration-none opacity-75">About Us</a></li>
-                        <li class="mb-2"><a href="services.html" class="text-ivory text-decoration-none opacity-75">Services</a></li>
-                        <li class="mb-2"><a href="case-studies.html" class="text-ivory text-decoration-none opacity-75">Case Studies</a></li>
-                        <li class="mb-2"><a href="careers.html" class="text-ivory text-decoration-none opacity-75">Careers</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-ivory text-decoration-none opacity-75">About
+                                Us</a></li>
+                        <li class="mb-2"><a href="services.html"
+                                class="text-ivory text-decoration-none opacity-75">Services</a></li>
+                        <li class="mb-2"><a href="case-studies.html"
+                                class="text-ivory text-decoration-none opacity-75">Case Studies</a></li>
+                        <li class="mb-2"><a href="careers.html"
+                                class="text-ivory text-decoration-none opacity-75">Careers</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 mb-4">
@@ -726,47 +759,47 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="js/main.js"></script>
-    
+
     <script>
         // Toggle FAQ items
         function toggleFAQ(button) {
             const faqItem = button.parentElement;
             const allItems = document.querySelectorAll('.faq-item');
-            
+
             // Close all other items
             allItems.forEach(item => {
                 if (item !== faqItem) {
                     item.classList.remove('active');
                 }
             });
-            
+
             // Toggle current item
             faqItem.classList.toggle('active');
         }
 
         // Handle contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const submitBtn = e.target.querySelector('button[type="submit"]');
             const btnText = submitBtn.querySelector('.btn-text');
             const spinner = submitBtn.querySelector('.loading-spinner');
-            
+
             // Show loading state
             submitBtn.classList.add('loading');
             btnText.style.display = 'none';
             spinner.style.display = 'inline-block';
-            
+
             // Simulate form submission
             setTimeout(() => {
                 // Reset form
                 e.target.reset();
-                
+
                 // Reset button state
                 submitBtn.classList.remove('loading');
                 btnText.style.display = 'inline';
                 spinner.style.display = 'none';
-                
+
                 // Show success message
                 alert('Thank you for your message! We will get back to you within 24 hours.');
             }, 2000);
@@ -778,4 +811,5 @@
         }
     </script>
 </body>
+
 </html>

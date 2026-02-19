@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Industries - Prestige PR & Communications</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+    <link rel="icon" type="image/png"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    
+
     <style>
         .industry-hero {
             background: linear-gradient(135deg, var(--obsidian-black), rgba(198, 162, 74, 0.1));
             padding: 6rem 0 4rem;
         }
-        
+
         .industry-card {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -31,7 +34,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .industry-card::before {
             content: '';
             position: absolute;
@@ -42,17 +45,17 @@
             background: linear-gradient(90deg, transparent, rgba(198, 162, 74, 0.1), transparent);
             transition: left 0.5s ease;
         }
-        
+
         .industry-card:hover::before {
             left: 100%;
         }
-        
+
         .industry-card:hover {
             transform: translateY(-10px);
             border-color: var(--royal-gold);
             box-shadow: 0 20px 40px rgba(198, 162, 74, 0.3);
         }
-        
+
         .industry-icon {
             width: 80px;
             height: 80px;
@@ -66,11 +69,11 @@
             margin: 0 auto 1.5rem;
             transition: all 0.3s ease;
         }
-        
+
         .industry-card:hover .industry-icon {
             transform: scale(1.1) rotate(5deg);
         }
-        
+
         .stat-highlight {
             background: linear-gradient(135deg, var(--royal-gold), #b39342);
             color: var(--obsidian-black);
@@ -80,7 +83,7 @@
             display: inline-block;
             margin: 0.25rem;
         }
-        
+
         .case-preview {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -89,27 +92,27 @@
             margin-top: 1rem;
             transition: all 0.3s ease;
         }
-        
+
         .case-preview:hover {
             border-color: var(--royal-gold);
             background-color: rgba(198, 162, 74, 0.1);
         }
-        
+
         .expertise-item {
             padding: 0.5rem 0;
             border-bottom: 1px solid rgba(198, 162, 74, 0.1);
             transition: all 0.3s ease;
         }
-        
+
         .expertise-item:hover {
             padding-left: 1rem;
             color: var(--royal-gold);
         }
-        
+
         .expertise-item:last-child {
             border-bottom: none;
         }
-        
+
         .industry-filter {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -120,47 +123,49 @@
             cursor: pointer;
             display: inline-block;
         }
-        
+
         .industry-filter:hover,
         .industry-filter.active {
             background-color: var(--royal-gold);
             color: var(--obsidian-black);
             border-color: var(--royal-gold);
         }
-        
+
         .success-metric {
             text-align: center;
             padding: 1rem;
         }
-        
+
         .metric-number {
             font-size: 2rem;
             font-weight: bold;
             color: var(--royal-gold);
         }
-        
+
         .metric-label {
             font-size: 0.875rem;
             opacity: 0.8;
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-xl navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
                 <i class="bi bi-briefcase-fill text-gold"></i> Prestige PR
             </a>
-            
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Home
                         </a>
                         <ul class="dropdown-menu bg-black border-gold" aria-labelledby="homeDropdown">
@@ -178,7 +183,8 @@
                         <a class="nav-link active" href="industries.html">Industries</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Pages
                         </a>
                         <ul class="dropdown-menu bg-black border-gold" aria-labelledby="pagesDropdown">
@@ -214,7 +220,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-8 mx-auto text-center">
                     <h1 class="display-3 fw-bold mb-4">Industries We Serve</h1>
-                    <p class="lead mb-4">Specialized PR expertise across diverse sectors, delivering tailored strategies that understand your unique market challenges and opportunities.</p>
+                    <p class="lead mb-4">Specialized PR expertise across diverse sectors, delivering tailored strategies
+                        that understand your unique market challenges and opportunities.</p>
                     <div class="gold-line mx-auto"></div>
                 </div>
             </div>
@@ -240,7 +247,7 @@
     <section class="py-5 bg-black" id="industries-grid">
         <div class="container">
             <div class="row g-4">
-                
+
                 <!-- Technology -->
                 <div class="col-lg-4 col-md-6 industry-item" data-category="tech">
                     <div class="industry-card">
@@ -249,24 +256,30 @@
                         </div>
                         <h4>Technology</h4>
                         <p class="text-gold fw-semibold">Innovation & Disruption</p>
-                        <p>From AI startups to enterprise tech giants, we help technology companies communicate complex innovations and establish market leadership.</p>
-                        
+                        <p>From AI startups to enterprise tech giants, we help technology companies communicate complex
+                            innovations and establish market leadership.</p>
+
                         <div class="mb-3">
                             <span class="stat-highlight">150+ Tech Clients</span>
                             <span class="stat-highlight">$2B+ Funding Raised</span>
                         </div>
-                        
+
                         <h6 class="text-gold mb-2">Expertise:</h6>
                         <div class="expertise-list">
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>AI & Machine Learning</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>SaaS & Cloud Computing</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Cybersecurity</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Fintech Innovation</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>AI & Machine
+                                Learning</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>SaaS & Cloud
+                                Computing</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Cybersecurity
+                            </div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Fintech
+                                Innovation</div>
                         </div>
-                        
+
                         <div class="case-preview">
                             <h6 class="text-gold mb-2">Recent Success:</h6>
-                            <p class="small mb-0">AI startup secured $50M Series B with 200+ media placements including TechCrunch and Forbes.</p>
+                            <p class="small mb-0">AI startup secured $50M Series B with 200+ media placements including
+                                TechCrunch and Forbes.</p>
                         </div>
                     </div>
                 </div>
@@ -279,24 +292,30 @@
                         </div>
                         <h4>Healthcare</h4>
                         <p class="text-gold fw-semibold">Trust & Credibility</p>
-                        <p>Building trust for healthcare organizations, pharmaceutical companies, and medical device manufacturers through strategic communication.</p>
-                        
+                        <p>Building trust for healthcare organizations, pharmaceutical companies, and medical device
+                            manufacturers through strategic communication.</p>
+
                         <div class="mb-3">
                             <span class="stat-highlight">75+ Healthcare Clients</span>
                             <span class="stat-highlight">24/7 Crisis Support</span>
                         </div>
-                        
+
                         <h6 class="text-gold mb-2">Expertise:</h6>
                         <div class="expertise-list">
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Pharmaceutical PR</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Medical Devices</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Healthcare IT</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Patient Advocacy</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Pharmaceutical
+                                PR</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Medical Devices
+                            </div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Healthcare IT
+                            </div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Patient
+                                Advocacy</div>
                         </div>
-                        
+
                         <div class="case-preview">
                             <h6 class="text-gold mb-2">Recent Success:</h6>
-                            <p class="small mb-0">Major hospital system successfully navigated crisis management, restoring 85% positive sentiment.</p>
+                            <p class="small mb-0">Major hospital system successfully navigated crisis management,
+                                restoring 85% positive sentiment.</p>
                         </div>
                     </div>
                 </div>
@@ -309,24 +328,30 @@
                         </div>
                         <h4>Finance</h4>
                         <p class="text-gold fw-semibold">Stability & Growth</p>
-                        <p>Helping financial institutions build credibility, navigate regulatory challenges, and communicate value to stakeholders.</p>
-                        
+                        <p>Helping financial institutions build credibility, navigate regulatory challenges, and
+                            communicate value to stakeholders.</p>
+
                         <div class="mb-3">
                             <span class="stat-highlight">100+ Financial Clients</span>
                             <span class="stat-highlight">$10B+ AUM Managed</span>
                         </div>
-                        
+
                         <h6 class="text-gold mb-2">Expertise:</h6>
                         <div class="expertise-list">
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Banking & Insurance</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Investment Management</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>FinTech & Payments</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Wealth Management</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Banking &
+                                Insurance</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Investment
+                                Management</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>FinTech &
+                                Payments</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Wealth
+                                Management</div>
                         </div>
-                        
+
                         <div class="case-preview">
                             <h6 class="text-gold mb-2">Recent Success:</h6>
-                            <p class="small mb-0">Traditional bank transformed into digital leader, achieving 50% new customer growth.</p>
+                            <p class="small mb-0">Traditional bank transformed into digital leader, achieving 50% new
+                                customer growth.</p>
                         </div>
                     </div>
                 </div>
@@ -339,24 +364,30 @@
                         </div>
                         <h4>Startups</h4>
                         <p class="text-gold fw-semibold">Launch & Scale</p>
-                        <p>From seed stage to IPO, we help startups build brand awareness, attract investors, and establish market presence.</p>
-                        
+                        <p>From seed stage to IPO, we help startups build brand awareness, attract investors, and
+                            establish market presence.</p>
+
                         <div class="mb-3">
                             <span class="stat-highlight">200+ Startup Clients</span>
                             <span class="stat-highlight">50+ Exits</span>
                         </div>
-                        
+
                         <h6 class="text-gold mb-2">Expertise:</h6>
                         <div class="expertise-list">
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Launch Strategies</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Investor Relations</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Growth Hacking PR</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Exit Communications</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Launch
+                                Strategies</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Investor
+                                Relations</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Growth Hacking
+                                PR</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Exit
+                                Communications</div>
                         </div>
-                        
+
                         <div class="case-preview">
                             <h6 class="text-gold mb-2">Recent Success:</h6>
-                            <p class="small mb-0">Series A startup secured 300% media coverage increase, leading to successful funding round.</p>
+                            <p class="small mb-0">Series A startup secured 300% media coverage increase, leading to
+                                successful funding round.</p>
                         </div>
                     </div>
                 </div>
@@ -369,24 +400,30 @@
                         </div>
                         <h4>Government</h4>
                         <p class="text-gold fw-semibold">Public Service & Policy</p>
-                        <p>Supporting government agencies and public sector organizations in communicating initiatives and building public trust.</p>
-                        
+                        <p>Supporting government agencies and public sector organizations in communicating initiatives
+                            and building public trust.</p>
+
                         <div class="mb-3">
                             <span class="stat-highlight">50+ Government Projects</span>
                             <span class="stat-highlight">25M+ Citizens Reached</span>
                         </div>
-                        
+
                         <h6 class="text-gold mb-2">Expertise:</h6>
                         <div class="expertise-list">
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Policy Communication</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Public Awareness</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Civic Engagement</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Crisis Response</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Policy
+                                Communication</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Public
+                                Awareness</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Civic
+                                Engagement</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Crisis Response
+                            </div>
                         </div>
-                        
+
                         <div class="case-preview">
                             <h6 class="text-gold mb-2">Recent Success:</h6>
-                            <p class="small mb-0">National health campaign reached 10M+ citizens with 95% positive sentiment.</p>
+                            <p class="small mb-0">National health campaign reached 10M+ citizens with 95% positive
+                                sentiment.</p>
                         </div>
                     </div>
                 </div>
@@ -399,24 +436,30 @@
                         </div>
                         <h4>Entertainment</h4>
                         <p class="text-gold fw-semibold">Creativity & Culture</p>
-                        <p>Amplifying voices in entertainment, media, and arts through strategic publicity and brand partnerships.</p>
-                        
+                        <p>Amplifying voices in entertainment, media, and arts through strategic publicity and brand
+                            partnerships.</p>
+
                         <div class="mb-3">
                             <span class="stat-highlight">80+ Entertainment Clients</span>
                             <span class="stat-highlight">1B+ Media Impressions</span>
                         </div>
-                        
+
                         <h6 class="text-gold mb-2">Expertise:</h6>
                         <div class="expertise-list">
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Film & Television</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Music & Artists</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Gaming & eSports</div>
-                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Live Events</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Film &
+                                Television</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Music & Artists
+                            </div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Gaming &
+                                eSports</div>
+                            <div class="expertise-item"><i class="bi bi-check-circle text-gold me-2"></i>Live Events
+                            </div>
                         </div>
-                        
+
                         <div class="case-preview">
                             <h6 class="text-gold mb-2">Recent Success:</h6>
-                            <p class="small mb-0">Major film premiere generated 500M+ social media impressions and record opening weekend.</p>
+                            <p class="small mb-0">Major film premiere generated 500M+ social media impressions and
+                                record opening weekend.</p>
                         </div>
                     </div>
                 </div>
@@ -435,7 +478,7 @@
                     <p class="lead text-black">Measurable results across diverse sectors</p>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="success-metric">
@@ -471,7 +514,8 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <h2 class="display-4 fw-bold text-black mb-4">Industry-Specific Expertise</h2>
-                    <p class="lead text-black mb-4">Let's discuss how our industry experience can help you achieve your communication goals.</p>
+                    <p class="lead text-black mb-4">Let's discuss how our industry experience can help you achieve your
+                        communication goals.</p>
                     <div class="d-flex gap-3 justify-content-center">
                         <a href="contact.html" class="btn btn-black btn-lg">Schedule Consultation</a>
                         <a href="case-studies.html" class="btn btn-outline-black btn-lg">View Case Studies</a>
@@ -495,7 +539,7 @@
                         <a href="#" class="text-gold"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-2 mb-4">
                     <h6 class="text-gold fw-bold mb-3">Quick Links</h6>
                     <ul class="list-unstyled">
@@ -505,7 +549,7 @@
                         <li><a href="contact.html" class="text-ivory text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-3 mb-4">
                     <h6 class="text-gold fw-bold mb-3">Services</h6>
                     <ul class="list-unstyled">
@@ -515,7 +559,7 @@
                         <li><a href="#" class="text-ivory text-decoration-none">Digital PR</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-3 mb-4">
                     <h6 class="text-gold fw-bold mb-3">Contact Info</h6>
                     <p class="small">
@@ -526,13 +570,13 @@
                     </p>
                 </div>
             </div>
-            
+
             <hr class="border-gold">
-            
+
             <div class="row">
                 <div class="text-center">
-                <p class="opacity-75 mb-0">&copy; 2026 Prestige PR & Communications. All rights reserved.</p>
-            </div>
+                    <p class="opacity-75 mb-0">&copy; 2026 Prestige PR & Communications. All rights reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
@@ -541,21 +585,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="js/main.js"></script>
-    
+
     <script>
         function filterIndustries(category) {
             const items = document.querySelectorAll('.industry-item');
             const filters = document.querySelectorAll('.industry-filter');
-            
+
             // Update active filter
             filters.forEach(filter => {
                 filter.classList.remove('active');
-                if (filter.textContent.toLowerCase().includes(category) || 
+                if (filter.textContent.toLowerCase().includes(category) ||
                     (category === 'all' && filter.textContent === 'All Industries')) {
                     filter.classList.add('active');
                 }
             });
-            
+
             // Show/hide industry cards
             items.forEach(item => {
                 if (category === 'all' || item.dataset.category === category) {
@@ -573,11 +617,12 @@
                 }
             });
         }
-        
+
         // Add transition styles
         document.querySelectorAll('.industry-item').forEach(item => {
             item.style.transition = 'all 0.3s ease';
         });
     </script>
 </body>
+
 </html>

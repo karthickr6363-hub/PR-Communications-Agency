@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Prestige PR - Agency Story & Leadership</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+    <link rel="icon" type="image/png"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    
+
     <style>
         .team-card {
             background-color: rgba(245, 245, 240, 0.05);
@@ -25,13 +28,13 @@
             transition: all 0.3s ease;
             height: 100%;
         }
-        
+
         .team-card:hover {
             transform: translateY(-10px);
             border-color: var(--royal-gold);
             box-shadow: 0 20px 40px rgba(198, 162, 74, 0.2);
         }
-        
+
         .team-image {
             width: 150px;
             height: 150px;
@@ -40,18 +43,18 @@
             border: 3px solid var(--royal-gold);
             overflow: hidden;
         }
-        
+
         .team-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .timeline-story {
             position: relative;
             padding: 2rem 0;
         }
-        
+
         .timeline-story::before {
             content: '';
             position: absolute;
@@ -62,12 +65,12 @@
             background: linear-gradient(180deg, var(--royal-gold), transparent);
             transform: translateX(-50%);
         }
-        
+
         .story-item {
             position: relative;
             margin-bottom: 3rem;
         }
-        
+
         .story-dot {
             position: absolute;
             left: 50%;
@@ -79,7 +82,7 @@
             transform: translateX(-50%);
             z-index: 2;
         }
-        
+
         .story-content {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -88,20 +91,20 @@
             width: 45%;
             transition: all 0.3s ease;
         }
-        
+
         .story-item:nth-child(odd) .story-content {
             margin-left: auto;
         }
-        
+
         .story-item:nth-child(even) .story-content {
             margin-right: auto;
         }
-        
+
         .story-content:hover {
             border-color: var(--royal-gold);
             box-shadow: 0 10px 25px rgba(198, 162, 74, 0.2);
         }
-        
+
         .value-card {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -111,13 +114,13 @@
             transition: all 0.3s ease;
             height: 100%;
         }
-        
+
         .value-card:hover {
             transform: translateY(-5px);
             border-color: var(--royal-gold);
             box-shadow: 0 15px 30px rgba(198, 162, 74, 0.2);
         }
-        
+
         .value-icon {
             width: 80px;
             height: 80px;
@@ -130,7 +133,7 @@
             font-size: 2rem;
             color: var(--obsidian-black);
         }
-        
+
         .office-card {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -139,38 +142,38 @@
             transition: all 0.3s ease;
             height: 100%;
         }
-        
+
         .office-card:hover {
             transform: translateY(-5px);
             border-color: var(--royal-gold);
             box-shadow: 0 15px 30px rgba(198, 162, 74, 0.2);
         }
-        
+
         .stats-highlight {
             background: linear-gradient(135deg, var(--royal-gold), #b39342);
             color: var(--obsidian-black);
             padding: 3rem 0;
         }
-        
+
         .stat-box {
             text-align: center;
         }
-        
+
         .stat-number {
             font-size: 3rem;
             font-weight: bold;
             margin-bottom: 0.5rem;
         }
-        
+
         @media (max-width: 768px) {
             .timeline-story::before {
                 left: 20px;
             }
-            
+
             .story-dot {
                 left: 20px;
             }
-            
+
             .story-content {
                 width: calc(100% - 40px);
                 margin-left: 40px !important;
@@ -178,22 +181,24 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-xl navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
                 <i class="bi bi-briefcase-fill text-gold"></i> Prestige PR
             </a>
-            
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Home
                         </a>
                         <ul class="dropdown-menu bg-black border-gold" aria-labelledby="homeDropdown">
@@ -211,7 +216,8 @@
                         <a class="nav-link" href="industries.html">Industries</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Pages
                         </a>
                         <ul class="dropdown-menu bg-black border-gold" aria-labelledby="pagesDropdown">
@@ -247,7 +253,9 @@
             <div class="row align-items-center">
                 <div class="col-lg-8 mx-auto text-center">
                     <h1 class="display-3 fw-bold mb-4">About Prestige PR</h1>
-                    <p class="lead mb-4">Building brands, shaping narratives, and driving influence for over two decades. We are the strategic communication partner that global brands trust when reputation matters most.</p>
+                    <p class="lead mb-4">Building brands, shaping narratives, and driving influence for over two
+                        decades. We are the strategic communication partner that global brands trust when reputation
+                        matters most.</p>
                     <div class="gold-line mx-auto"></div>
                 </div>
             </div>
@@ -263,45 +271,51 @@
                     <div class="gold-line mx-auto"></div>
                 </div>
             </div>
-            
+
             <div class="timeline-story">
                 <div class="story-item">
                     <div class="story-dot"></div>
                     <div class="story-content">
                         <h4 class="text-gold">2002 - The Beginning</h4>
-                        <p>Founded by Sarah Johnson in a small Manhattan office with a vision to revolutionize how brands communicate with their audiences. Started with just 3 clients and a passion for storytelling.</p>
+                        <p>Founded by Sarah Johnson in a small Manhattan office with a vision to revolutionize how
+                            brands communicate with their audiences. Started with just 3 clients and a passion for
+                            storytelling.</p>
                     </div>
                 </div>
-                
+
                 <div class="story-item">
                     <div class="story-dot"></div>
                     <div class="story-content">
                         <h4 class="text-gold">2008 - Expansion</h4>
-                        <p>Opened offices in London and Hong Kong, establishing our global footprint. Successfully navigated the financial crisis for our clients, proving our crisis management expertise.</p>
+                        <p>Opened offices in London and Hong Kong, establishing our global footprint. Successfully
+                            navigated the financial crisis for our clients, proving our crisis management expertise.</p>
                     </div>
                 </div>
-                
+
                 <div class="story-item">
                     <div class="story-dot"></div>
                     <div class="story-content">
                         <h4 class="text-gold">2015 - Digital Transformation</h4>
-                        <p>Launched our digital PR division, embracing social media and influencer marketing. Became the first agency to offer AI-powered sentiment analysis to clients.</p>
+                        <p>Launched our digital PR division, embracing social media and influencer marketing. Became the
+                            first agency to offer AI-powered sentiment analysis to clients.</p>
                     </div>
                 </div>
-                
+
                 <div class="story-item">
                     <div class="story-dot"></div>
                     <div class="story-content">
                         <h4 class="text-gold">2020 - Crisis Leadership</h4>
-                        <p>Guided over 100 brands through the global pandemic with innovative communication strategies. Recognized as Crisis Management Agency of the Year.</p>
+                        <p>Guided over 100 brands through the global pandemic with innovative communication strategies.
+                            Recognized as Crisis Management Agency of the Year.</p>
                     </div>
                 </div>
-                
+
                 <div class="story-item">
                     <div class="story-dot"></div>
                     <div class="story-content">
                         <h4 class="text-gold">2024 - The Future</h4>
-                        <p>Now serving 500+ clients across 6 continents with 200+ professionals. Continuing to innovate with AI-driven insights and real-time media monitoring.</p>
+                        <p>Now serving 500+ clients across 6 continents with 200+ professionals. Continuing to innovate
+                            with AI-driven insights and real-time media monitoring.</p>
                     </div>
                 </div>
             </div>
@@ -349,7 +363,7 @@
                     <div class="gold-line mx-auto"></div>
                 </div>
             </div>
-            
+
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6">
                     <div class="team-card">
@@ -358,14 +372,15 @@
                         </div>
                         <h5 class="text-black">Sarah Johnson</h5>
                         <p class="text-gold fw-semibold">CEO & Founder</p>
-                        <p class="small text-black">Visionary leader with 25+ years in PR. Former journalist turned communications strategist.</p>
+                        <p class="small text-black">Visionary leader with 25+ years in PR. Former journalist turned
+                            communications strategist.</p>
                         <div class="social-links">
                             <a href="#" class="text-gold me-2"><i class="bi bi-linkedin"></i></a>
                             <a href="#" class="text-gold me-2"><i class="bi bi-twitter"></i></a>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <div class="team-card">
                         <div class="team-image">
@@ -373,14 +388,15 @@
                         </div>
                         <h5 class="text-black">Michael Chen</h5>
                         <p class="text-gold fw-semibold">President</p>
-                        <p class="small text-black">Global operations expert. Previously led APAC communications for Fortune 500 companies.</p>
+                        <p class="small text-black">Global operations expert. Previously led APAC communications for
+                            Fortune 500 companies.</p>
                         <div class="social-links">
                             <a href="#" class="text-gold me-2"><i class="bi bi-linkedin"></i></a>
                             <a href="#" class="text-gold me-2"><i class="bi bi-twitter"></i></a>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <div class="team-card">
                         <div class="team-image">
@@ -388,14 +404,15 @@
                         </div>
                         <h5 class="text-black">Emily Rodriguez</h5>
                         <p class="text-gold fw-semibold">Chief Strategy Officer</p>
-                        <p class="small text-black">Award-winning strategist specializing in brand transformation and digital innovation.</p>
+                        <p class="small text-black">Award-winning strategist specializing in brand transformation and
+                            digital innovation.</p>
                         <div class="social-links">
                             <a href="#" class="text-gold me-2"><i class="bi bi-linkedin"></i></a>
                             <a href="#" class="text-gold me-2"><i class="bi bi-twitter"></i></a>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <div class="team-card">
                         <div class="team-image">
@@ -403,7 +420,8 @@
                         </div>
                         <h5 class="text-black">James Thompson</h5>
                         <p class="text-gold fw-semibold">Crisis Management Lead</p>
-                        <p class="small text-black">Former White House communications advisor. Expert in high-stakes reputation management.</p>
+                        <p class="small text-black">Former White House communications advisor. Expert in high-stakes
+                            reputation management.</p>
                         <div class="social-links">
                             <a href="#" class="text-gold me-2"><i class="bi bi-linkedin"></i></a>
                             <a href="#" class="text-gold me-2"><i class="bi bi-twitter"></i></a>
@@ -423,14 +441,16 @@
                     <div class="gold-line mx-auto"></div>
                 </div>
             </div>
-            
+
             <div class="row mb-5">
                 <div class="col-lg-8 mx-auto text-center">
                     <h3 class="text-gold mb-4">Our Mission</h3>
-                    <p class="lead">To build and protect brand reputations through strategic communication, innovative storytelling, and unwavering commitment to excellence. We empower brands to navigate the complex media landscape with confidence and authenticity.</p>
+                    <p class="lead">To build and protect brand reputations through strategic communication, innovative
+                        storytelling, and unwavering commitment to excellence. We empower brands to navigate the complex
+                        media landscape with confidence and authenticity.</p>
                 </div>
             </div>
-            
+
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6">
                     <div class="value-card">
@@ -438,37 +458,41 @@
                             <i class="bi bi-shield-check"></i>
                         </div>
                         <h5>Integrity</h5>
-                        <p class="small">We operate with transparency and honesty in all client relationships and communications.</p>
+                        <p class="small">We operate with transparency and honesty in all client relationships and
+                            communications.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <div class="value-card">
                         <div class="value-icon">
                             <i class="bi bi-lightbulb"></i>
                         </div>
                         <h5>Innovation</h5>
-                        <p class="small">We embrace cutting-edge technology and creative approaches to deliver exceptional results.</p>
+                        <p class="small">We embrace cutting-edge technology and creative approaches to deliver
+                            exceptional results.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <div class="value-card">
                         <div class="value-icon">
                             <i class="bi bi-trophy"></i>
                         </div>
                         <h5>Excellence</h5>
-                        <p class="small">We pursue perfection in every campaign, every strategy, and every client interaction.</p>
+                        <p class="small">We pursue perfection in every campaign, every strategy, and every client
+                            interaction.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-3 col-md-6">
                     <div class="value-card">
                         <div class="value-icon">
                             <i class="bi bi-people"></i>
                         </div>
                         <h5>Partnership</h5>
-                        <p class="small">We work collaboratively with clients as true partners in their success journey.</p>
+                        <p class="small">We work collaboratively with clients as true partners in their success journey.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -484,7 +508,7 @@
                     <div class="gold-line mx-auto"></div>
                 </div>
             </div>
-            
+
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="office-card">
@@ -493,12 +517,12 @@
                         </h5>
                         <p class="text-black"><strong>Global Headquarters</strong></p>
                         <p class="small text-black">123 Business Ave, Suite 100<br>
-                        New York, NY 10001<br>
-                        Tel: +1 (555) 123-4567</p>
+                            New York, NY 10001<br>
+                            Tel: +1 (555) 123-4567</p>
                         <p class="small text-black"><strong>Team:</strong> 75 professionals</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6">
                     <div class="office-card">
                         <h5 class="text-gold mb-3">
@@ -506,12 +530,12 @@
                         </h5>
                         <p class="text-black"><strong>European Headquarters</strong></p>
                         <p class="small text-black">1 Fleet Street<br>
-                        London EC4Y 1AA<br>
-                        Tel: +44 (20) 7123-4567</p>
+                            London EC4Y 1AA<br>
+                            Tel: +44 (20) 7123-4567</p>
                         <p class="small text-black"><strong>Team:</strong> 50 professionals</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6">
                     <div class="office-card">
                         <h5 class="text-gold mb-3">
@@ -519,12 +543,12 @@
                         </h5>
                         <p class="text-black"><strong>Asia Pacific Headquarters</strong></p>
                         <p class="small text-black">88 Queensway<br>
-                        Central, Hong Kong<br>
-                        Tel: +852 2123-4567</p>
+                            Central, Hong Kong<br>
+                            Tel: +852 2123-4567</p>
                         <p class="small text-black"><strong>Team:</strong> 45 professionals</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6">
                     <div class="office-card">
                         <h5 class="text-gold mb-3">
@@ -532,12 +556,12 @@
                         </h5>
                         <p class="text-black"><strong>Tech Hub</strong></p>
                         <p class="small text-black">1 Market Street<br>
-                        San Francisco, CA 94105<br>
-                        Tel: +1 (415) 123-4567</p>
+                            San Francisco, CA 94105<br>
+                            Tel: +1 (415) 123-4567</p>
                         <p class="small text-black"><strong>Team:</strong> 30 professionals</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6">
                     <div class="office-card">
                         <h5 class="text-gold mb-3">
@@ -545,12 +569,12 @@
                         </h5>
                         <p class="text-black"><strong>Middle East Hub</strong></p>
                         <p class="small text-black">DIFC Gate Building<br>
-                        Dubai, UAE<br>
-                        Tel: +971 4 123-4567</p>
+                            Dubai, UAE<br>
+                            Tel: +971 4 123-4567</p>
                         <p class="small text-black"><strong>Team:</strong> 25 professionals</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6">
                     <div class="office-card">
                         <h5 class="text-gold mb-3">
@@ -558,8 +582,8 @@
                         </h5>
                         <p class="text-black"><strong>Southeast Asia Hub</strong></p>
                         <p class="small text-black">1 Raffles Place<br>
-                        Singapore 048616<br>
-                        Tel: +65 6123-4567</p>
+                            Singapore 048616<br>
+                            Tel: +65 6123-4567</p>
                         <p class="small text-black"><strong>Team:</strong> 20 professionals</p>
                     </div>
                 </div>
@@ -573,7 +597,8 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <h2 class="display-4 fw-bold text-black mb-4">Join Our Story</h2>
-                    <p class="lead text-black mb-4">Ready to write the next chapter of your brand's success story with us?</p>
+                    <p class="lead text-black mb-4">Ready to write the next chapter of your brand's success story with
+                        us?</p>
                     <div class="d-flex gap-3 justify-content-center">
                         <a href="contact.html" class="btn btn-black btn-lg">Start Your Journey</a>
                         <a href="careers.html" class="btn btn-outline-black btn-lg">Join Our Team</a>
@@ -597,7 +622,7 @@
                         <a href="#" class="text-gold"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-2 mb-4">
                     <h6 class="text-gold fw-bold mb-3">Quick Links</h6>
                     <ul class="list-unstyled">
@@ -607,7 +632,7 @@
                         <li><a href="contact.html" class="text-ivory text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-3 mb-4">
                     <h6 class="text-gold fw-bold mb-3">Services</h6>
                     <ul class="list-unstyled">
@@ -617,7 +642,7 @@
                         <li><a href="#" class="text-ivory text-decoration-none">Digital PR</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-3 mb-4">
                     <h6 class="text-gold fw-bold mb-3">Contact Info</h6>
                     <p class="small">
@@ -628,13 +653,13 @@
                     </p>
                 </div>
             </div>
-            
+
             <hr class="border-gold">
-            
+
             <div class="row">
                 <div class="text-center">
-                <p class="opacity-75 mb-0">&copy; 2026 Prestige PR & Communications. All rights reserved.</p>
-            </div>
+                    <p class="opacity-75 mb-0">&copy; 2026 Prestige PR & Communications. All rights reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
@@ -644,4 +669,5 @@
     <!-- Custom JS -->
     <script src="js/main.js"></script>
 </body>
+
 </html>
