@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Dashboard - Prestige PR & Communications</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -12,32 +13,42 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+    <link rel="icon" type="image/png"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
     <link rel="stylesheet" href="css/styles.css">
-    
+
     <style>
         .dashboard-container {
             background-color: var(--obsidian-black);
             min-height: 100vh;
+            max-width: 100vw;
+            overflow-x: hidden;
         }
-        
+
+        * {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
         .sidebar {
             background-color: rgba(245, 245, 240, 0.05);
             border-right: 1px solid rgba(198, 162, 74, 0.2);
             min-height: 100vh;
             padding: 2rem 0;
         }
-        
+
         .sidebar-nav {
             list-style: none;
             padding: 0;
         }
-        
+
         .sidebar-nav li {
             margin-bottom: 0.5rem;
         }
-        
+
         .sidebar-nav a {
             color: var(--ivory-white);
             text-decoration: none;
@@ -47,23 +58,25 @@
             transition: all 0.3s ease;
             border-left: 3px solid transparent;
         }
-        
+
         .sidebar-nav a:hover,
         .sidebar-nav a.active {
             background-color: rgba(198, 162, 74, 0.1);
             border-left-color: var(--royal-gold);
             color: var(--royal-gold);
         }
-        
+
         .sidebar-nav i {
             margin-right: 0.75rem;
             font-size: 1.1rem;
         }
-        
+
         .main-content {
             padding: 2rem;
+            max-width: 100%;
+            overflow-x: hidden;
         }
-        
+
         .dashboard-card {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -72,12 +85,12 @@
             margin-bottom: 1.5rem;
             transition: all 0.3s ease;
         }
-        
+
         .dashboard-card:hover {
             border-color: var(--royal-gold);
             box-shadow: 0 10px 25px rgba(198, 162, 74, 0.2);
         }
-        
+
         .stat-card {
             background: linear-gradient(135deg, rgba(198, 162, 74, 0.1), rgba(198, 162, 74, 0.2));
             border: 1px solid var(--royal-gold);
@@ -86,19 +99,19 @@
             text-align: center;
             transition: all 0.3s ease;
         }
-        
+
         .stat-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(198, 162, 74, 0.3);
         }
-        
+
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
             color: var(--royal-gold);
             margin-bottom: 0.5rem;
         }
-        
+
         .campaign-item {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -107,37 +120,37 @@
             margin-bottom: 1rem;
             transition: all 0.3s ease;
         }
-        
+
         .campaign-item:hover {
             border-color: var(--royal-gold);
             background-color: rgba(198, 162, 74, 0.05);
         }
-        
+
         .status-badge {
             padding: 0.25rem 0.75rem;
             border-radius: 20px;
             font-size: 0.875rem;
             font-weight: 600;
         }
-        
+
         .status-active {
             background-color: rgba(40, 167, 69, 0.2);
             color: #28a745;
             border: 1px solid #28a745;
         }
-        
+
         .status-pending {
             background-color: rgba(255, 193, 7, 0.2);
             color: #ffc107;
             border: 1px solid #ffc107;
         }
-        
+
         .status-completed {
             background-color: rgba(198, 162, 74, 0.2);
             color: var(--royal-gold);
             border: 1px solid var(--royal-gold);
         }
-        
+
         .media-item {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -146,12 +159,12 @@
             margin-bottom: 1rem;
             transition: all 0.3s ease;
         }
-        
+
         .media-item:hover {
             border-color: var(--royal-gold);
             transform: translateX(5px);
         }
-        
+
         .notification-item {
             background-color: rgba(198, 162, 74, 0.1);
             border-left: 3px solid var(--royal-gold);
@@ -159,13 +172,13 @@
             margin-bottom: 0.5rem;
             border-radius: 0 8px 8px 0;
         }
-        
+
         .chart-container {
             position: relative;
             height: 300px;
             margin-top: 1rem;
         }
-        
+
         .top-bar {
             background-color: rgba(245, 245, 240, 0.05);
             border-bottom: 1px solid rgba(198, 162, 74, 0.2);
@@ -174,13 +187,13 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .user-menu {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
-        
+
         .user-avatar {
             width: 40px;
             height: 40px;
@@ -192,21 +205,28 @@
             justify-content: center;
             font-weight: bold;
         }
-        
+
         .content-section {
             display: none;
         }
-        
+
         .content-section.active {
             display: block;
             animation: fadeIn 0.5s ease;
         }
-        
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        
+
         .approval-item {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -214,13 +234,13 @@
             padding: 1rem;
             margin-bottom: 1rem;
         }
-        
+
         .approval-actions {
             display: flex;
             gap: 0.5rem;
             margin-top: 1rem;
         }
-        
+
         .message-item {
             background-color: rgba(245, 245, 240, 0.05);
             border: 1px solid rgba(198, 162, 74, 0.2);
@@ -228,63 +248,158 @@
             padding: 1rem;
             margin-bottom: 1rem;
         }
-        
+
         .message-item.unread {
             border-color: var(--royal-gold);
             background-color: rgba(198, 162, 74, 0.05);
         }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                height: auto;
+                padding: 0.5rem 0.75rem;
+            }
+
+            .top-bar .d-flex {
+                flex-direction: row;
+                gap: 1rem;
+                width: auto;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .user-menu {
+                justify-content: flex-end;
+                width: auto;
+                gap: 0.5rem;
+            }
+
+            .user-menu .user-name {
+                display: none;
+            }
+
+            /* Reset absolute positioning for hamburger on mobile */
+            .top-bar button.d-md-none {
+                position: static;
+                margin-right: 0.5rem;
+            }
+
+            .navbar-brand {
+                font-size: 1.1rem;
+            }
+
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                z-index: 1000;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                background-color: var(--obsidian-black);
+                width: 250px;
+                border-right: 1px solid var(--royal-gold) !important;
+                padding-top: 1rem;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+            }
+
+            /* Add an overlay when sidebar is active */
+            .sidebar-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+            }
+
+            .sidebar-overlay.active {
+                display: block;
+            }
+        }
     </style>
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+
+            // Toggle overlay
+            let overlay = document.getElementById('sidebarOverlay');
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.id = 'sidebarOverlay';
+                overlay.className = 'sidebar-overlay';
+                overlay.onclick = toggleSidebar;
+                document.body.appendChild(overlay);
+            }
+            overlay.classList.toggle('active');
+        }
+    </script>
 </head>
+
 <body>
     <div class="dashboard-container">
         <!-- Top Bar -->
         <div class="top-bar">
             <div class="d-flex align-items-center">
-                <div class="dropdown me-4">
-                    <button class="btn btn-outline-gold dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                        <i class="bi bi-house"></i> Home
-                    </button>
-                    <ul class="dropdown-menu bg-black border-gold" aria-labelledby="homeDropdown">
-                        <li><a class="dropdown-item text-ivory" href="index.html">Brand Power Mode</a></li>
-                        <li><a class="dropdown-item text-ivory" href="home2.html">Media & Press Mode</a></li>
-                    </ul>
-                </div>
-                <h4 class="mb-0 text-gold">Brand Command Center</h4>
+                <button class="btn btn-outline-gold me-2 d-md-none" onclick="toggleSidebar()">
+                    <i class="bi bi-list"></i>
+                </button>
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <i class="bi bi-briefcase-fill text-gold"></i> Prestige PR
+                </a>
             </div>
-            <div class="text-center">
-                <p class="opacity-75 mb-0">&copy; 2026 Prestige PR & Communications. All rights reserved.</p>
-            </div>
+
             <div class="user-menu">
+                <button class="btn btn-outline-gold" id="themeToggle" onclick="toggleTheme()">
+                    <i class="bi bi-moon" id="themeIcon"></i>
+                </button>
                 <div class="dropdown">
                     <button class="btn btn-outline-gold dropdown-toggle" type="button" data-bs-toggle="dropdown">
                         <i class="bi bi-bell"></i>
                         <span class="badge bg-gold text-black">3</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end bg-black border-gold">
-                        <li><h6 class="dropdown-header text-gold">Notifications</h6></li>
+                        <li>
+                            <h6 class="dropdown-header text-gold">Notifications</h6>
+                        </li>
                         <li><a class="dropdown-item text-ivory" href="#">New press coverage secured</a></li>
                         <li><a class="dropdown-item text-ivory" href="#">Campaign milestone reached</a></li>
                         <li><a class="dropdown-item text-ivory" href="#">Monthly report ready</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
-                    <button class="btn btn-outline-gold dropdown-toggle d-flex align-items-center" type="button" data-bs-toggle="dropdown">
-                        <div class="user-avatar me-2">JD</div>
-                        John Doe
+                    <button class="btn btn-outline-gold dropdown-toggle d-flex align-items-center" type="button"
+                        data-bs-toggle="dropdown">
+                        <div class="user-avatar me-md-2">JD</div>
+                        <span class="user-name">John Doe</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end bg-black border-gold">
-                        <li><a class="dropdown-item text-ivory" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
-                        <li><a class="dropdown-item text-ivory" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
-                        <li><hr class="dropdown-divider border-gold"></li>
-                        <li><a class="dropdown-item text-ivory" href="index.html"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                        <li><a class="dropdown-item text-ivory" href="#"><i class="bi bi-person me-2"></i>Profile</a>
+                        </li>
+                        <li><a class="dropdown-item text-ivory" href="#"><i class="bi bi-gear me-2"></i>Settings</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider border-gold">
+                        </li>
+                        <li><a class="dropdown-item text-ivory" href="index.html"><i
+                                    class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div class="d-flex">
+        <div class="d-flex flex-column flex-md-row">
             <!-- Sidebar -->
-            <div class="sidebar col-md-3 col-lg-2">
+            <div class="sidebar col-md-3 col-lg-2" id="sidebar">
                 <ul class="sidebar-nav">
                     <li>
                         <a href="#" class="active" onclick="showSection('overview')">
@@ -304,6 +419,7 @@
                             Media Coverage
                         </a>
                     </li>
+
                     <li>
                         <a href="#" onclick="showSection('reports')">
                             <i class="bi bi-graph-up"></i>
@@ -327,11 +443,11 @@
 
             <!-- Main Content -->
             <div class="main-content col-md-9 col-lg-10">
-                
+
                 <!-- Overview Section -->
                 <div id="overview" class="content-section active">
                     <h2 class="mb-4">Dashboard Overview</h2>
-                    
+
                     <!-- Stats Cards -->
                     <div class="row mb-4">
                         <div class="col-lg-3 col-md-6 mb-3">
@@ -391,7 +507,8 @@
                             <div class="d-flex justify-content-between align-items-start">
                                 <div>
                                     <h6 class="mb-1">TechCrunch Coverage Secured</h6>
-                                    <p class="mb-0 opacity-75">Your AI startup campaign received major coverage in TechCrunch</p>
+                                    <p class="mb-0 opacity-75">Your AI startup campaign received major coverage in
+                                        TechCrunch</p>
                                 </div>
                                 <small class="text-gold">2 hours ago</small>
                             </div>
@@ -409,7 +526,8 @@
                             <div class="d-flex justify-content-between align-items-start">
                                 <div>
                                     <h6 class="mb-1">Monthly Report Ready</h6>
-                                    <p class="mb-0 opacity-75">November performance report is now available for download</p>
+                                    <p class="mb-0 opacity-75">November performance report is now available for download
+                                    </p>
                                 </div>
                                 <small class="text-gold">1 day ago</small>
                             </div>
@@ -420,13 +538,13 @@
                 <!-- Campaigns Section -->
                 <div id="campaigns" class="content-section">
                     <h2 class="mb-4">Campaign Management</h2>
-                    
+
                     <div class="dashboard-card">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h5 class="text-gold">Active Campaigns</h5>
                             <button class="btn btn-gold btn-sm">New Campaign</button>
                         </div>
-                        
+
                         <div class="campaign-item">
                             <div class="d-flex justify-content-between align-items-start">
                                 <div>
@@ -445,7 +563,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="campaign-item">
                             <div class="d-flex justify-content-between align-items-start">
                                 <div>
@@ -464,7 +582,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="campaign-item">
                             <div class="d-flex justify-content-between align-items-start">
                                 <div>
@@ -489,7 +607,7 @@
                 <!-- Media Coverage Section -->
                 <div id="media" class="content-section">
                     <h2 class="mb-4">Media Coverage</h2>
-                    
+
                     <div class="dashboard-card">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h5 class="text-gold">Latest Mentions</h5>
@@ -499,7 +617,7 @@
                                 <button class="btn btn-outline-gold btn-sm">Neutral</button>
                             </div>
                         </div>
-                        
+
                         <div class="media-item">
                             <div class="d-flex justify-content-between align-items-start">
                                 <div>
@@ -515,7 +633,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="media-item">
                             <div class="d-flex justify-content-between align-items-start">
                                 <div>
@@ -531,7 +649,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="media-item">
                             <div class="d-flex justify-content-between align-items-start">
                                 <div>
@@ -553,7 +671,7 @@
                 <!-- Reports Section -->
                 <div id="reports" class="content-section">
                     <h2 class="mb-4">Reports & Analytics</h2>
-                    
+
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="dashboard-card">
@@ -603,10 +721,10 @@
                 <!-- Approvals Section -->
                 <div id="approvals" class="content-section">
                     <h2 class="mb-4">Content Approvals</h2>
-                    
+
                     <div class="dashboard-card">
                         <h5 class="text-gold mb-3">Pending Your Approval</h5>
-                        
+
                         <div class="approval-item">
                             <div class="d-flex justify-content-between align-items-start">
                                 <div>
@@ -621,7 +739,7 @@
                                 <button class="btn btn-outline-gold btn-sm">Preview</button>
                             </div>
                         </div>
-                        
+
                         <div class="approval-item">
                             <div class="d-flex justify-content-between align-items-start">
                                 <div>
@@ -642,34 +760,36 @@
                 <!-- Messages Section -->
                 <div id="messages" class="content-section">
                     <h2 class="mb-4">Messages</h2>
-                    
+
                     <div class="dashboard-card">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h5 class="text-gold">Agency Messages</h5>
                             <button class="btn btn-gold btn-sm">New Message</button>
                         </div>
-                        
+
                         <div class="message-item unread">
                             <div class="d-flex justify-content-between align-items-start">
                                 <div>
                                     <h6>Sarah Johnson - Campaign Update</h6>
-                                    <p class="mb-1 opacity-75">Great news! We've secured coverage in TechCrunch for your AI startup...</p>
+                                    <p class="mb-1 opacity-75">Great news! We've secured coverage in TechCrunch for your
+                                        AI startup...</p>
                                     <small class="text-gold">2 hours ago</small>
                                 </div>
                                 <span class="badge bg-gold text-black">New</span>
                             </div>
                         </div>
-                        
+
                         <div class="message-item">
                             <div class="d-flex justify-content-between align-items-start">
                                 <div>
                                     <h6>Michael Chen - Monthly Report</h6>
-                                    <p class="mb-1 opacity-75">November performance report is ready for your review...</p>
+                                    <p class="mb-1 opacity-75">November performance report is ready for your review...
+                                    </p>
                                     <small class="text-gold">1 day ago</small>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="message-item">
                             <div class="d-flex justify-content-between align-items-start">
                                 <div>
@@ -689,7 +809,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="js/main.js"></script>
-    
+
     <script>
         // Show content section
         function showSection(sectionId) {
@@ -697,17 +817,17 @@
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.remove('active');
             });
-            
+
             // Show selected section
             document.getElementById(sectionId).classList.add('active');
-            
+
             // Update sidebar active state
             document.querySelectorAll('.sidebar-nav a').forEach(link => {
                 link.classList.remove('active');
             });
             event.target.classList.add('active');
         }
-        
+
         // Initialize charts
         function initCharts() {
             // Coverage Chart
@@ -746,7 +866,7 @@
                     }
                 });
             }
-            
+
             // Status Chart
             const statusCtx = document.getElementById('statusChart');
             if (statusCtx) {
@@ -770,7 +890,7 @@
                     }
                 });
             }
-            
+
             // Performance Chart
             const performanceCtx = document.getElementById('performanceChart');
             if (performanceCtx) {
@@ -810,11 +930,12 @@
                 });
             }
         }
-        
+
         // Initialize charts when page loads
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             initCharts();
         });
     </script>
 </body>
+
 </html>

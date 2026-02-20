@@ -5,7 +5,7 @@ function toggleTheme() {
     const html = document.documentElement;
     const themeIcon = document.getElementById('themeIcon');
     const currentTheme = html.getAttribute('data-theme');
-    
+
     if (currentTheme === 'light') {
         html.removeAttribute('data-theme');
         themeIcon.classList.remove('bi-sun');
@@ -20,11 +20,11 @@ function toggleTheme() {
 }
 
 // ===== INITIALIZATION =====
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Load saved theme
     const savedTheme = localStorage.getItem('theme');
     const themeIcon = document.getElementById('themeIcon');
-    
+
     if (savedTheme === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
         if (themeIcon) {
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             themeIcon.classList.add('bi-sun');
         }
     }
-    
+
     initializeAnimations();
     initializeCounters();
     initializeScrollReveal();
@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===== NAVBAR SCROLL EFFECT =====
 function initializeNavbar() {
     const navbar = document.querySelector('.navbar');
-    
-    window.addEventListener('scroll', function() {
+
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 100) {
             navbar.style.backgroundColor = 'rgba(11, 13, 16, 0.98)';
             navbar.style.boxShadow = '0 5px 20px rgba(198, 162, 74, 0.1)';
@@ -60,25 +60,26 @@ function initializeNavbar() {
 function initializeCounters() {
     const counters = document.querySelectorAll('.counter');
     const speed = 200;
-    
+
     const countUp = (counter) => {
         const target = +counter.getAttribute('data-target');
         const count = +counter.innerText;
         const increment = target / speed;
-        
+
         if (count < target) {
             counter.innerText = Math.ceil(count + increment);
             setTimeout(() => countUp(counter), 10);
         } else {
-            counter.innerText = target;
+            const suffix = counter.getAttribute('data-suffix') || '';
+            counter.innerText = target + suffix;
         }
     };
-    
+
     const observerOptions = {
         threshold: 0.5,
         rootMargin: '0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
@@ -87,7 +88,7 @@ function initializeCounters() {
             }
         });
     }, observerOptions);
-    
+
     counters.forEach(counter => {
         observer.observe(counter);
     });
@@ -96,19 +97,19 @@ function initializeCounters() {
 // ===== SCROLL REVEAL ANIMATION =====
 function initializeScrollReveal() {
     const reveals = document.querySelectorAll('.reveal');
-    
+
     const revealOnScroll = () => {
         reveals.forEach(element => {
             const windowHeight = window.innerHeight;
             const elementTop = element.getBoundingClientRect().top;
             const elementVisible = 150;
-            
+
             if (elementTop < windowHeight - elementVisible) {
                 element.classList.add('active');
             }
         });
     };
-    
+
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Initial check
 }
@@ -210,16 +211,16 @@ function initializeCaseModals() {
             `
         }
     };
-    
-    window.openCaseModal = function(caseId) {
+
+    window.openCaseModal = function (caseId) {
         const modal = document.getElementById('caseModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalBody = document.getElementById('modalBody');
-        
+
         if (caseData[caseId]) {
             modalTitle.textContent = caseData[caseId].title;
             modalBody.innerHTML = caseData[caseId].content;
-            
+
             const bsModal = new bootstrap.Modal(modal);
             bsModal.show();
         }
@@ -238,14 +239,14 @@ function initializeAnimations() {
 // ===== FORM VALIDATION =====
 function initializeFormValidation() {
     const forms = document.querySelectorAll('.needs-validation');
-    
+
     forms.forEach(form => {
-        form.addEventListener('submit', function(event) {
+        form.addEventListener('submit', function (event) {
             if (!form.checkValidity()) {
                 event.preventDefault();
                 event.stopPropagation();
             }
-            
+
             form.classList.add('was-validated');
         });
     });
@@ -256,7 +257,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        
+
         if (target) {
             target.scrollIntoView({
                 behavior: 'smooth',
@@ -280,7 +281,7 @@ function hideLoading(element, originalText) {
 // ===== TOAST NOTIFICATIONS =====
 function showToast(message, type = 'success') {
     const toastContainer = document.getElementById('toastContainer') || createToastContainer();
-    
+
     const toast = document.createElement('div');
     toast.className = `toast align-items-center text-white bg-${type === 'success' ? 'success' : 'danger'} border-0`;
     toast.setAttribute('role', 'alert');
@@ -292,12 +293,12 @@ function showToast(message, type = 'success') {
             <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
         </div>
     `;
-    
+
     toastContainer.appendChild(toast);
-    
+
     const bsToast = new bootstrap.Toast(toast);
     bsToast.show();
-    
+
     toast.addEventListener('hidden.bs.toast', () => {
         toast.remove();
     });
@@ -314,10 +315,10 @@ function createToastContainer() {
 // ===== PARALLAX EFFECT =====
 function initializeParallax() {
     const parallaxElements = document.querySelectorAll('.parallax');
-    
+
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
-        
+
         parallaxElements.forEach(element => {
             const speed = element.dataset.speed || 0.5;
             const yPos = -(scrolled * speed);
@@ -330,7 +331,7 @@ function initializeParallax() {
 function typeWriter(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
-    
+
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
@@ -338,23 +339,23 @@ function typeWriter(element, text, speed = 100) {
             setTimeout(type, speed);
         }
     }
-    
+
     type();
 }
 
 // ===== MAGNETIC BUTTON EFFECT =====
 function initializeMagneticButtons() {
     const buttons = document.querySelectorAll('.btn-gold');
-    
+
     buttons.forEach(button => {
         button.addEventListener('mousemove', (e) => {
             const rect = button.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
-            
+
             button.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
         });
-        
+
         button.addEventListener('mouseleave', () => {
             button.style.transform = 'translate(0, 0)';
         });
@@ -364,7 +365,7 @@ function initializeMagneticButtons() {
 // ===== LAZY LOADING =====
 function initializeLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
-    
+
     const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -375,7 +376,7 @@ function initializeLazyLoading() {
             }
         });
     });
-    
+
     images.forEach(img => {
         imageObserver.observe(img);
     });
@@ -396,7 +397,7 @@ function debounce(func, wait) {
 
 function throttle(func, limit) {
     let inThrottle;
-    return function() {
+    return function () {
         const args = arguments;
         const context = this;
         if (!inThrottle) {
@@ -420,13 +421,13 @@ function initializePerformanceMonitoring() {
                 }
             });
         });
-        
+
         observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] });
     }
 }
 
 // ===== INITIALIZATION CALL =====
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeParallax();
     initializeMagneticButtons();
     initializeLazyLoading();
