@@ -596,6 +596,54 @@ body {
     transform: translateX(5px);
 }
 
+/* ===== TEAM CARDS ===== */
+.team-card {
+    background-color: rgba(245, 245, 240, 0.05);
+    border: 1px solid rgba(198, 162, 74, 0.2);
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--royal-gold);
+    box-shadow: 0 20px 40px rgba(198, 162, 74, 0.2);
+}
+
+.team-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    border: 3px solid var(--royal-gold);
+    overflow: hidden;
+    background-color: var(--obsidian-black);
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-card h5 {
+    color: var(--obsidian-black) !important;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.team-card p {
+    color: var(--obsidian-black) !important;
+}
+
+[data-theme="light"] .team-card h5,
+[data-theme="light"] .team-card p {
+    color: var(--ivory-white) !important;
+}
+
 /* ===== STATS SECTION ===== */
 .stat-item {
     padding: 2rem;
