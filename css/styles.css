@@ -61,6 +61,14 @@ body {
     color: var(--ivory-white) !important;
 }
 
+/* Specific class to force light text on dark background imagery regardless of light/dark mode */
+.text-light-always,
+[data-theme="light"] .text-light-always,
+[data-theme="light"] h1.text-light-always,
+[data-theme="light"] p.text-light-always {
+    color: #F5F5F0 !important;
+}
+
 .text-gold {
     color: var(--royal-gold) !important;
 }
